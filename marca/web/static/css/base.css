@@ -1,0 +1,236 @@
+/* Marca Personal — base común a todas las pantallas.
+   Colores con significado (pocos):
+     amarillo de tarjeta = espera una decisión
+     rojo de tarjeta     = alerta, daño colateral
+     verde césped        = bloqueo aplicado
+   Todo lo demás es tinta y papel (juez, público) o tiza y pizarra (sala). */
+
+:root {
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", "Noto Serif", Georgia, serif;
+  --sans: "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Roboto, "Noto Sans", Arial, sans-serif;
+  --cond: "Avenir Next Condensed", "DIN Condensed", "DIN Alternate", "Bahnschrift SemiCondensed", Bahnschrift, "Roboto Condensed", "Arial Narrow", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "Roboto Mono", "Liberation Mono", monospace;
+
+  /* papel y tinta (claro) */
+  --papel: #f3eee3;
+  --papel-hondo: #e9e2d2;
+  --hoja: #fbf8f1;
+  --tinta: #1c1b18;
+  --tinta-2: #48443c;
+  --tinta-3: #635d52;
+  --regla: #d6cdb9;
+  --regla-fuerte: #b9ae96;
+  --sello: #24317a;
+
+  /* significado */
+  --amarillo: #f2c200;
+  --amarillo-suave: #fbefb8;
+  --amarillo-texto: #6e5300;
+  --rojo: #c8102e;
+  --rojo-suave: #f8dcdc;
+  --rojo-texto: #9f0c24;
+  --verde: #1f7a3a;
+  --verde-suave: #d7ead9;
+  --verde-texto: #155f2b;
+  --gris-estado: #8a8476;
+
+  --foco: #1d4ed8;
+  --radio: 6px;
+  --sombra: 0 1px 0 rgba(28, 27, 24, .05), 0 6px 18px -10px rgba(28, 27, 24, .25);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #14130f;
+    --papel-hondo: #0f0e0b;
+    --hoja: #1d1b16;
+    --tinta: #efe9db;
+    --tinta-2: #c9c1b0;
+    --tinta-3: #a59d8c;
+    --regla: #39352c;
+    --regla-fuerte: #555043;
+    --sello: #a9b8ff;
+
+    --amarillo: #f2c200;
+    --amarillo-suave: #3a3110;
+    --amarillo-texto: #f5cf4a;
+    --rojo: #e5484d;
+    --rojo-suave: #3d1517;
+    --rojo-texto: #ff8a8e;
+    --verde: #3aa457;
+    --verde-suave: #14301c;
+    --verde-texto: #74d48c;
+    --gris-estado: #8f887a;
+
+    --foco: #8fb3ff;
+    --sombra: 0 1px 0 rgba(0, 0, 0, .3), 0 8px 24px -12px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; min-height: 100vh; font-family: var(--sans); line-height: 1.45; }
+img, svg { display: block; max-width: 100%; }
+button, input, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+[hidden] { display: none !important; }
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; border-radius: 3px; }
+
+.solo-lectores {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.mono { font-family: var(--mono); font-variant-ligatures: none; }
+.num { font-variant-numeric: tabular-nums; }
+.rotulo {
+  font: 650 .72rem/1.2 var(--sans);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.cortar { overflow-wrap: anywhere; word-break: break-word; }
+/* Un host o una IP pasa entero a la línea siguiente antes que cortarse en un guion. */
+.mono.cortar { display: inline-block; max-width: 100%; }
+
+/* --- Hash en grupos de cuatro: se lee, y al copiarlo sale entero --- */
+.hash { font-family: var(--mono); font-size: .86em; letter-spacing: .02em; overflow-wrap: anywhere; }
+.hash > span { display: inline-block; margin-right: .38em; }
+.hash > span:last-child { margin-right: 0; }
+
+/* --- Tarjeta de árbitro: el indicador de estado con forma, color y texto --- */
+.tarjeta {
+  display: inline-flex; align-items: center; gap: .5em;
+  font: 700 .74rem/1.1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+}
+.tarjeta::before {
+  content: ""; flex: none;
+  width: .78em; height: 1.05em; border-radius: 2px;
+  transform: rotate(8deg);
+  background: var(--gris-estado);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+}
+.tarjeta--amarilla::before { background: var(--amarillo); }
+.tarjeta--roja::before { background: var(--rojo); }
+.tarjeta--verde::before { background: var(--verde); border-radius: 50%; width: .9em; height: .9em; transform: none; }
+.tarjeta--amarilla { color: var(--amarillo-texto); }
+.tarjeta--roja { color: var(--rojo-texto); }
+.tarjeta--verde { color: var(--verde-texto); }
+.tarjeta--gris { color: var(--tinta-3); }
+
+/* --- Píldora de estado (texto + ícono, nunca solo color) --- */
+.estado {
+  display: inline-flex; align-items: center; gap: .35em;
+  padding: .12em .55em .14em; border-radius: 999px;
+  font: 650 .78rem/1.3 var(--sans); white-space: nowrap;
+  border: 1px solid currentColor;
+}
+.estado--ok { color: var(--verde-texto); background: var(--verde-suave); border-color: transparent; }
+.estado--espera { color: var(--amarillo-texto); background: var(--amarillo-suave); border-color: transparent; }
+.estado--alerta { color: var(--rojo-texto); background: var(--rojo-suave); border-color: transparent; }
+.estado--neutro { color: var(--tinta-3); }
+
+/* --- Botones --- */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55em;
+  min-height: 48px; padding: .65em 1.15em;
+  border-radius: var(--radio); border: 2px solid var(--tinta);
+  background: transparent; color: var(--tinta);
+  font: 650 1rem/1.15 var(--sans); letter-spacing: .01em;
+  cursor: pointer; text-decoration: none; text-align: center;
+  transition: transform .08s ease, background-color .15s ease, box-shadow .15s ease;
+  touch-action: manipulation;
+}
+.boton:hover { background: color-mix(in srgb, var(--tinta) 7%, transparent); }
+.boton:active { transform: translateY(1px); }
+.boton[disabled], .boton[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; }
+.boton--principal { background: var(--tinta); color: var(--papel); }
+.boton--principal:hover { background: color-mix(in srgb, var(--tinta) 88%, var(--papel)); }
+.boton--peligro { border-color: var(--rojo); color: var(--rojo-texto); }
+.boton--chico { min-height: 44px; padding: .45em .9em; font-size: .92rem; }
+.boton--ancho { width: 100%; }
+
+/* --- Campos --- */
+.campo { display: grid; gap: .35rem; }
+.campo > label, .campo > .rotulo { color: var(--tinta-2); }
+.entrada {
+  width: 100%; min-height: 48px; padding: .6em .75em;
+  border: 2px solid var(--regla-fuerte); border-radius: var(--radio);
+  background: var(--hoja); color: var(--tinta);
+}
+.entrada:focus-visible { border-color: var(--foco); outline-offset: 0; }
+textarea.entrada { min-height: 88px; resize: vertical; line-height: 1.4; }
+.ayuda { font-size: .85rem; color: var(--tinta-3); }
+.error-campo { font-size: .9rem; font-weight: 600; color: var(--rojo-texto); }
+
+/* --- Conexión con la plataforma --- */
+.conexion {
+  position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 50;
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: .6em;
+  max-width: calc(100vw - 32px);
+  padding: .7em 1em; border-radius: var(--radio);
+  background: var(--rojo); color: #fff;
+  font: 650 .95rem/1.25 var(--sans);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .5);
+}
+.conexion::before { content: "!"; display: grid; place-items: center; width: 1.4em; height: 1.4em; border-radius: 50%; background: #fff; color: var(--rojo); font-weight: 800; flex: none; }
+
+/* --- Avisos flotantes (resultado de una acción) --- */
+.flotantes {
+  position: fixed; z-index: 60; left: 50%; top: var(--arriba, 12px); transform: translateX(-50%);
+  display: grid; gap: 8px; width: min(560px, calc(100vw - 32px)); pointer-events: none;
+}
+/* El aviso informa: los toques pasan a lo que hay debajo (no tapa botones de acción). */
+.flotante {
+  pointer-events: none;
+  padding: .75em 1em; border-radius: var(--radio);
+  background: var(--tinta); color: var(--papel);
+  font: 600 .95rem/1.35 var(--sans);
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, .55);
+  border-left: 6px solid var(--verde);
+  animation: entrar-flotante .25s ease-out both;
+}
+.flotante--alerta { border-left-color: var(--rojo); }
+.flotante--espera { border-left-color: var(--amarillo); }
+@keyframes entrar-flotante { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+/* --- El sello: la firma atada a la evidencia, como sello de goma --- */
+.sello {
+  --c: var(--sello);
+  display: inline-grid; justify-items: center; gap: .15rem;
+  padding: .55rem .8rem .5rem; min-width: 11.5rem;
+  color: var(--c);
+  border: 3px double var(--c); border-radius: 8px;
+  outline: 1.5px solid var(--c); outline-offset: 3px;
+  transform: rotate(-4deg);
+  background:
+    radial-gradient(circle at 20% 30%, transparent 0 60%, color-mix(in srgb, var(--c) 5%, transparent) 61%),
+    transparent;
+  text-align: center;
+  mix-blend-mode: multiply;
+}
+@media (prefers-color-scheme: dark) { .sello { mix-blend-mode: screen; } }
+.sello__titulo { font: 800 .9rem/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; padding-left: .32em; }
+.sello__codigo { display: grid; font: 700 .82rem/1.25 var(--mono); letter-spacing: .06em; }
+.sello__pie { font: 600 .66rem/1.2 var(--sans); letter-spacing: .1em; text-transform: uppercase; opacity: .9; }
+.sello--rechazo { --c: var(--rojo-texto); }
+.sello--nuevo { animation: estampar .55s cubic-bezier(.2, 1.4, .4, 1) both; }
+@keyframes estampar {
+  0% { opacity: 0; transform: rotate(-12deg) scale(1.9); }
+  60% { opacity: 1; transform: rotate(-3deg) scale(.96); }
+  100% { opacity: 1; transform: rotate(-4deg) scale(1); }
+}
+
+/* --- Marca (logo) --- */
+.logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
+.logo svg { width: 28px; height: 28px; flex: none; }
+.logo__texto { font: 800 .82rem/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,13 @@
+salida/
+salida*/
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+
+# Usuarios del partido final (contraseñas propias): nunca al repo
+config/jueces_final.json
+config/jueces_final*.json
+
+# Documentos internos del equipo (guion, plan, preguntas, lista de antes de entregar): no van al repo público
+equipo/

@@ -1,0 +1,619 @@
+{
+ "id": "EXP-2026-000002",
+ "num": 2,
+ "titulo": "golazo-libre.test",
+ "sitio": "golazo-libre.test",
+ "creado_min": 6.063,
+ "estado": "cerrado",
+ "filtracion": {
+  "clave": "LP26-PRA-OFI-S077310",
+  "sesion": "S077310",
+  "marcas": [
+   "LP26-PRA-OFI-S077310"
+  ],
+  "prefijo": "LP26-PRA-OFI",
+  "origen": "Señal oficial del titular (plataforma propia)"
+ },
+ "dinamica": {
+  "activa": true,
+  "marcas": [
+   "LP26-PRA-OFI-S077310"
+  ],
+  "orden_marco": {
+   "id": "OM-01",
+   "entrada": 3,
+   "huella": "dc4b858e2bcee10a90073371a18a62b36fdefaa57bf2a37ef98549d97157fdb4",
+   "nombre": "Dra. Laura Ficticia",
+   "min": 0.16
+  },
+  "otorgada_por": {
+   "juez_id": "jueza-laura-ficticia",
+   "nombre": "Dra. Laura Ficticia"
+  },
+  "otorgada_min": 6.4,
+  "entrada": 34,
+  "respaldada_por": "juez-martin-ejemplo",
+  "requiere_ratificacion": false,
+  "ratificaciones": [
+   {
+    "juez_id": "juez-martin-ejemplo",
+    "nombre": "Dr. Martín Ejemplo",
+    "min": 50.55,
+    "entrada": 114
+   }
+  ],
+  "revocada": null
+ },
+ "corte_en_origen": {
+  "min": 6.064,
+  "sesion": "S077310",
+  "texto": "Constancia de aviso al titular (Liga Profesional Ficticia): la sesión S077310 de su plataforma es la que se está filtrando; cortarla le corresponde al titular. La plataforma no corta nada: deja constancia del aviso. (Simulado: el simulador no tiene esa API.)"
+ },
+ "ubicaciones": [
+  {
+   "n": 1,
+   "ref": "EXP-2026-000002/U1",
+   "estado": "aprobada",
+   "host": "live.golazo-libre.test",
+   "ip": "198.51.100.20",
+   "host_stream": "live.golazo-libre.test",
+   "asn": 64610,
+   "organizacion": "NubeRápida CDN (ficticia)",
+   "pagina": "https://golazo-libre.test/partido",
+   "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 6.0,
+   "ultima_deteccion_min": 96.0,
+   "detecciones": [
+    "D-0003",
+    "D-0006",
+    "D-0010",
+    "D-0013",
+    "D-0017",
+    "D-0022",
+    "D-0026",
+    "D-0031",
+    "D-0036",
+    "D-0040"
+   ],
+   "detecciones_min": [
+    6.0,
+    16.0,
+    26.0,
+    36.0,
+    46.0,
+    56.0,
+    66.0,
+    76.0,
+    86.0,
+    96.0
+   ],
+   "continuidad": null,
+   "senal": {
+    "marca": "LP26-PRA-OFI-S077310",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S077310",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S077310). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "485b937379e696ae00920a738d03b3062ef615309dda5a10b2eb90a001f6665e",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 6.0,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "live.golazo-libre.test",
+     "tienda-mate-y-yerba.test",
+     "noticias-del-valle.test",
+     "turismo-cafayate.example",
+     "radio-comunitaria-fm.test",
+     "municipio-ejemplo.example",
+     "biblioteca-popular-norte.test",
+     "delivery-salta-ejemplo.test",
+     "clinica-veterinaria-sol.test",
+     "inmobiliaria-ejemplo.test",
+     "academia-de-ingles.test",
+     "feria-artesanal.example"
+    ],
+    "propios": [
+     "live.golazo-libre.test"
+    ],
+    "ajenos": [
+     "tienda-mate-y-yerba.test",
+     "noticias-del-valle.test",
+     "turismo-cafayate.example",
+     "radio-comunitaria-fm.test",
+     "municipio-ejemplo.example",
+     "biblioteca-popular-norte.test",
+     "delivery-salta-ejemplo.test",
+     "clinica-veterinaria-sol.test",
+     "inmobiliaria-ejemplo.test",
+     "academia-de-ingles.test",
+     "feria-artesanal.example"
+    ],
+    "observados": [
+     "live.golazo-libre.test"
+    ],
+    "inferidos": [],
+    "red_compartida": true,
+    "riesgo": "alto",
+    "recomendacion": "dominio",
+    "motivo": "La IP aloja otros 11 sitios que no tienen que ver con el pirata (tienda-mate-y-yerba.test, noticias-del-valle.test y 9 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "x",
+     "url": "https://x.example/golazolibre/status/2207",
+     "minuto": 4.0
+    },
+    {
+     "red": "discord",
+     "url": "https://discord.example/invite/golazo-hoy",
+     "minuto": 5.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "dominio",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por dominio de live.golazo-libre.test hasta el minuto 105 (final del partido). La IP aloja otros 11 sitios que no tienen que ver con el pirata (tienda-mate-y-yerba.test, noticias-del-valle.test y 9 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "dominio",
+       "objetivo": "live.golazo-libre.test"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "dominio",
+       "objetivo": "live.golazo-libre.test"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "live.golazo-libre.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "dominio",
+       "objetivo": "live.golazo-libre.test"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "9751d196e9e1220d76a7791be0e3462ba41ae7082c93b467fb71cd20f7cd0f61",
+   "armado_min": 6.064,
+   "armado_utc": "2026-11-12T17:30:09.585Z",
+   "asignada_a": "jueza-laura-ficticia",
+   "notificada_min": 6.064,
+   "vista_min": 6.081,
+   "decision": {
+    "tipo": "firma",
+    "aprobada": true,
+    "juez_id": "jueza-laura-ficticia",
+    "juez": "Dra. Laura Ficticia",
+    "juzgado_id": "jg-centro-3",
+    "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+    "min": 6.4,
+    "utc": "2026-11-12T17:30:10.597Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "5a3b27b535c59f2d5d0f1c9d761afe68",
+    "entrada": 34,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "dominio",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por dominio de live.golazo-libre.test hasta el minuto 105 (final del partido). La IP aloja otros 11 sitios que no tienen que ver con el pirata (tienda-mate-y-yerba.test, noticias-del-valle.test y 9 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": null,
+    "texto": "Firmada por Dra. Laura Ficticia en el minuto 6,4 (entrada 34)"
+   },
+   "automatica": {
+    "posible": false,
+    "motivo": "es el primer servidor de esta filtración: lo decide el juez."
+   },
+   "operacion": [
+    "golazo-libre.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000002",
+    "ubicacion": 1,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0003",
+     "minuto": 6.0,
+     "pagina": "https://golazo-libre.test/partido",
+     "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+     "host_stream": "live.golazo-libre.test",
+     "ip_servidor": "198.51.100.20",
+     "asn": 64610,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S077310",
+     "captura": {
+      "capturada_min": 6.0,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R0VCZSIFk8ZdS4KLyWGvZyBgTRG3Q/r7zN01hN4BLIEDSu1jEEsjRysDQA8huKd7Tc/NcICJPD9uel6f0LcElw=="
+     },
+     "promocion": [
+      {
+       "red": "x",
+       "url": "https://x.example/golazolibre/status/2207",
+       "minuto": 4.0
+      },
+      {
+       "red": "discord",
+       "url": "https://discord.example/invite/golazo-hoy",
+       "minuto": 5.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "485b937379e696ae00920a738d03b3062ef615309dda5a10b2eb90a001f6665e",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 6.0,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S077310",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S077310",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S077310). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://golazo-libre.test/partido",
+     "stream_url": "https://live.golazo-libre.test/hls/en-vivo/index.m3u8",
+     "host": "live.golazo-libre.test",
+     "ip": "198.51.100.20",
+     "asn": 64610,
+     "organizacion": "NubeRápida CDN (ficticia)",
+     "host_crudo": "live.golazo-libre.test",
+     "nombres_crudos": {
+      "live.golazo-libre.test": "live.golazo-libre.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "198.51.100.20": {
+       "ip": "198.51.100.20",
+       "asn": 64610,
+       "organizacion": "NubeRápida CDN (ficticia)",
+       "dominios": [
+        "live.golazo-libre.test",
+        "tienda-mate-y-yerba.test",
+        "noticias-del-valle.test",
+        "turismo-cafayate.example",
+        "radio-comunitaria-fm.test",
+        "municipio-ejemplo.example",
+        "biblioteca-popular-norte.test",
+        "delivery-salta-ejemplo.test",
+        "clinica-veterinaria-sol.test",
+        "inmobiliaria-ejemplo.test",
+        "academia-de-ingles.test",
+        "feria-artesanal.example"
+       ]
+      }
+     },
+     "por_host": {
+      "live.golazo-libre.test": {
+       "dominio": "live.golazo-libre.test",
+       "ips": [
+        {
+         "ip": "198.51.100.20",
+         "asn": 64610,
+         "organizacion": "NubeRápida CDN (ficticia)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 6.063
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "live.golazo-libre.test",
+      "tienda-mate-y-yerba.test",
+      "noticias-del-valle.test",
+      "turismo-cafayate.example",
+      "radio-comunitaria-fm.test",
+      "municipio-ejemplo.example",
+      "biblioteca-popular-norte.test",
+      "delivery-salta-ejemplo.test",
+      "clinica-veterinaria-sol.test",
+      "inmobiliaria-ejemplo.test",
+      "academia-de-ingles.test",
+      "feria-artesanal.example"
+     ],
+     "propios": [
+      "live.golazo-libre.test"
+     ],
+     "ajenos": [
+      "tienda-mate-y-yerba.test",
+      "noticias-del-valle.test",
+      "turismo-cafayate.example",
+      "radio-comunitaria-fm.test",
+      "municipio-ejemplo.example",
+      "biblioteca-popular-norte.test",
+      "delivery-salta-ejemplo.test",
+      "clinica-veterinaria-sol.test",
+      "inmobiliaria-ejemplo.test",
+      "academia-de-ingles.test",
+      "feria-artesanal.example"
+     ],
+     "observados": [
+      "live.golazo-libre.test"
+     ],
+     "inferidos": [],
+     "red_compartida": true,
+     "riesgo": "alto",
+     "recomendacion": "dominio",
+     "motivo": "La IP aloja otros 11 sitios que no tienen que ver con el pirata (tienda-mate-y-yerba.test, noticias-del-valle.test y 9 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "x",
+      "url": "https://x.example/golazolibre/status/2207",
+      "minuto": 4.0
+     },
+     {
+      "red": "discord",
+      "url": "https://discord.example/invite/golazo-hoy",
+      "minuto": 5.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "dominio",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por dominio de live.golazo-libre.test hasta el minuto 105 (final del partido). La IP aloja otros 11 sitios que no tienen que ver con el pirata (tienda-mate-y-yerba.test, noticias-del-valle.test y 9 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "dominio",
+        "objetivo": "live.golazo-libre.test"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": null,
+    "armado": {
+     "min": 6.064,
+     "utc": "2026-11-12T17:30:09.585Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "ord-0002-u1-aurora-01-5a3b27b535c59f2d5d0f1c9d761afe68",
+     "proveedor": "aurora",
+     "tipo": "dominio",
+     "objetivo": "live.golazo-libre.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 6.4,
+     "recibida_min": 6.403,
+     "aplicada_min": 7.046,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000002",
+     "n": 1,
+     "k": 1,
+     "sello": "5a3b27b535c59f2d5d0f1c9d761afe68",
+     "entrada_sello": 34,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 6.4
+    },
+    {
+     "orden_id": "ord-0002-u1-andina-01-5a3b27b535c59f2d5d0f1c9d761afe68",
+     "proveedor": "andina",
+     "tipo": "dominio",
+     "objetivo": "live.golazo-libre.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 6.4,
+     "recibida_min": 6.402,
+     "aplicada_min": 8.877,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000002",
+     "n": 1,
+     "k": 1,
+     "sello": "5a3b27b535c59f2d5d0f1c9d761afe68",
+     "entrada_sello": 34,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 6.4
+    },
+    {
+     "orden_id": "ord-0002-u1-valle-01-5a3b27b535c59f2d5d0f1c9d761afe68",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "live.golazo-libre.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 6.4,
+     "recibida_min": 6.401,
+     "aplicada_min": 11.906,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000002",
+     "n": 1,
+     "k": 1,
+     "sello": "5a3b27b535c59f2d5d0f1c9d761afe68",
+     "entrada_sello": 34,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 6.4
+    },
+    {
+     "orden_id": "ord-0002-u1-cumbre-01-5a3b27b535c59f2d5d0f1c9d761afe68",
+     "proveedor": "cumbre",
+     "tipo": "dominio",
+     "objetivo": "live.golazo-libre.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 6.4,
+     "recibida_min": 6.402,
+     "aplicada_min": 8.959,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000002",
+     "n": 1,
+     "k": 1,
+     "sello": "5a3b27b535c59f2d5d0f1c9d761afe68",
+     "entrada_sello": 34,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 6.4
+    }
+   ],
+   "redetecciones": [
+    "D-0006",
+    "D-0010",
+    "D-0013",
+    "D-0017",
+    "D-0022",
+    "D-0026",
+    "D-0031",
+    "D-0036",
+    "D-0040"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 1.05,
+    "completo_min": 5.91,
+    "visibilidad_residual_pct": 1.6
+   },
+   "ventana": [
+    6.0,
+    105.0
+   ],
+   "tiempos": {
+    "deteccion_min": 6.0,
+    "firma_min": 6.4,
+    "primer_proveedor_min": 7.046,
+    "todos_los_proveedores_min": 11.906,
+    "expediente_abierto_min": 0.319,
+    "tipo": "en_persona"
+   }
+  }
+ ]
+}

@@ -1,0 +1,157 @@
+{
+  "escenario": "practica-01",
+  "log_hasta_min": 110.0,
+  "resumen": {
+    "fases_piratas_bloqueadas": "7 de 7",
+    "visibilidad_residual_promedio_pct": 3.3,
+    "ordenes_recibidas": 33,
+    "ordenes_aplicadas": 30,
+    "ordenes_fallidas": 3,
+    "ordenes_rechazadas": 0,
+    "bloqueos_con_dano_colateral": 0,
+    "dominios_legitimos_afectados": 0,
+    "bloqueos_falsos_positivos": 0,
+    "bloqueos_ip_activos_post_partido": 0,
+    "reclamos": 0,
+    "reclamos_resueltos_por_levantamiento": 0,
+    "ordenes_firmadas_fuera_de_turno": 0
+  },
+  "fases": [
+    {
+      "stream": "pelotaya",
+      "fase": 1,
+      "ip": "203.0.113.10",
+      "host": "s1.pelotaya.test",
+      "desde_min": 2.0,
+      "hasta_min": 36.0,
+      "bloqueo_recomendado": "ip",
+      "primer_bloqueo_min": 0.75,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 3.6
+    },
+    {
+      "stream": "pelotaya",
+      "fase": 2,
+      "ip": "203.0.113.11",
+      "host": "s2.pelotaya.test",
+      "desde_min": 37.5,
+      "hasta_min": 70.0,
+      "bloqueo_recomendado": "ip",
+      "primer_bloqueo_min": 0.46,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 3.3
+    },
+    {
+      "stream": "pelotaya",
+      "fase": 3,
+      "ip": "198.51.100.77",
+      "host": "s3.pelotaya.test",
+      "desde_min": 71.0,
+      "hasta_min": 105.0,
+      "bloqueo_recomendado": "ip",
+      "primer_bloqueo_min": 0.4,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 2.6
+    },
+    {
+      "stream": "golazo-cdn",
+      "fase": 1,
+      "ip": "198.51.100.20",
+      "host": "live.golazo-libre.test",
+      "desde_min": 6.0,
+      "hasta_min": 105.0,
+      "bloqueo_recomendado": "dominio",
+      "primer_bloqueo_min": 1.05,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 1.6
+    },
+    {
+      "stream": "verpartido",
+      "fase": 1,
+      "ip": "192.0.2.50",
+      "host": "tv.verpartido-hd.test",
+      "desde_min": 9.0,
+      "hasta_min": 105.0,
+      "bloqueo_recomendado": "dominio",
+      "primer_bloqueo_min": 0.99,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 1.5
+    },
+    {
+      "stream": "tribuna",
+      "fase": 1,
+      "ip": "203.0.113.40",
+      "host": "x9.tribuna-pirata.test",
+      "desde_min": 55.0,
+      "hasta_min": 81.0,
+      "bloqueo_recomendado": "ip",
+      "primer_bloqueo_min": 0.92,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 5.0
+    },
+    {
+      "stream": "tribuna",
+      "fase": 2,
+      "ip": "203.0.113.41",
+      "host": "x10.tribuna-pirata.test",
+      "desde_min": 82.0,
+      "hasta_min": 105.0,
+      "bloqueo_recomendado": "ip",
+      "primer_bloqueo_min": 0.58,
+      "proveedores_que_bloquearon": [
+        "andina",
+        "aurora",
+        "cumbre",
+        "valle"
+      ],
+      "clientes_cubiertos_pct": 100.0,
+      "visibilidad_residual_pct": 5.3
+    }
+  ],
+  "dano_colateral": [],
+  "falsos_positivos": [],
+  "post_partido": {
+    "ip": [],
+    "dominio": []
+  },
+  "corte_post_partido_min": 110.0,
+  "reclamos": [],
+  "rechazos_por_motivo": {},
+  "fuera_de_turno": []
+}

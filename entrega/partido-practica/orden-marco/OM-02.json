@@ -1,0 +1,112 @@
+{
+ "id": "OM-02",
+ "entrada": 113,
+ "min": 50.19,
+ "utc": "2026-11-12T17:32:21.965Z",
+ "hora": "18:50:11",
+ "juez_id": "juez-martin-ejemplo",
+ "juez": "Dr. Martín Ejemplo",
+ "juzgado_id": "jg-norte-1",
+ "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+ "huella": "f8535052acf78f69f65cf94af1de21d8d46ac3434ae4c53aacf07d37f519ff26",
+ "seguimiento": true,
+ "contenido": {
+  "version": 1,
+  "partido": {
+   "id": "practica-01",
+   "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+   "titular": "Liga Profesional Ficticia",
+   "fin_min": 105
+  },
+  "marcas_validas": [
+   "LP26-PRA-OFI"
+  ],
+  "licenciatarios": [
+   {
+    "nombre": "Canal Norte TV (ficticio)",
+    "prefijo_marca": "LP26-PRA-LIC-NORTE",
+    "dominios": [
+     "canalnorte.test",
+     "envivo.canalnorte.test"
+    ]
+   }
+  ],
+  "proveedores": [
+   {
+    "id": "aurora",
+    "nombre": "Conectividad Aurora (ficticio)",
+    "capacidades": [
+     "ip",
+     "dominio"
+    ]
+   },
+   {
+    "id": "andina",
+    "nombre": "Red Andina Telecom (ficticio)",
+    "capacidades": [
+     "ip",
+     "dominio"
+    ]
+   },
+   {
+    "id": "valle",
+    "nombre": "FibraValle (ficticio)",
+    "capacidades": [
+     "dominio"
+    ]
+   },
+   {
+    "id": "cumbre",
+    "nombre": "Cooperativa Cumbre Conecta (ficticio)",
+    "capacidades": [
+     "ip",
+     "dominio"
+    ]
+   }
+  ],
+  "juez": {
+   "juez_id": "juez-martin-ejemplo",
+   "nombre": "Dr. Martín Ejemplo",
+   "juzgado_id": "jg-norte-1",
+   "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte"
+  },
+  "turno": {
+   "desde_min": 50,
+   "hasta_min": 240
+  },
+  "seguimiento": true,
+  "lineas": [
+   "Partido: Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo. Titular de los derechos: Liga Profesional Ficticia.",
+   "Esta orden vale durante mi turno en este partido: desde el minuto 50 hasta el final del partido (minuto 105). Todo bloqueo que se ordene bajo ella vence, como máximo, al final del partido (minuto 105).",
+   "Solo se protege la señal del partido: la oficial (marcas LP26-PRA-OFI) y la de cada licenciatario cuando se transmite fuera de sus dominios (marcas LP26-PRA-LIC-NORTE). Nunca se bloquea a un licenciatario en sus dominios: Canal Norte TV (ficticio) en canalnorte.test y envivo.canalnorte.test.",
+   "Cada bloqueo necesita un expediente con evidencia sellada (la captura con su hash, la marca verificada y el servidor con host, IP y red) y mi firma, servidor por servidor, salvo que en esta orden autorice el seguimiento de la misma filtración.",
+   "Si la IP es compartida o hay dudas, solo se bloquea el nombre del stream. Apartarse de esa regla exige mi fundamento escrito.",
+   "Los reclamos se verifican y todo levantamiento lleva mi firma."
+  ],
+  "condiciones_seguimiento": [
+   "Si firmo un bloqueo con «Firmar y seguir a esta filtración» y esa misma filtración (la misma sesión de la marca de agua) aparece en otro servidor, la plataforma amplía el bloqueo sin esperar una firma nueva, solo si se cumple todo esto:",
+   "La evidencia nueva está completa y sellada, y el bloqueo nuevo no alcanza a sitios ajenos: si el servidor nuevo comparte la IP con sitios ajenos, se bloquea solo el nombre del stream.",
+   "Estoy de turno y con la plataforma abierta.",
+   "Cada ampliación se me avisa en el momento, sale identificada como ampliación (su número empieza con amp-) y puedo frenarla o levantarla.",
+   "Vence al final del partido. Fuera de estas condiciones, el pedido vuelve a mí."
+  ]
+ },
+ "firma": "38e9797260f919186e034cf405b3eb7698ce5bc27649f35799d7433052132f1d",
+ "reemplaza": null,
+ "reemplazada_por": null,
+ "ampliaciones": [
+  {
+   "exp": "EXP-2026-000001",
+   "ubicacion": 3,
+   "min": 71.004,
+   "entrada": 145
+  },
+  {
+   "exp": "EXP-2026-000004",
+   "ubicacion": 2,
+   "min": 82.04,
+   "entrada": 172
+  }
+ ],
+ "vigente": true
+}

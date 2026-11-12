@@ -1,0 +1,27 @@
+{
+  "aviso": "Usuarios y claves de DEMOSTRACIÓN para el simulador del hackathon. No usar en producción.",
+  "usuarios": [
+    {
+      "usuario": "laura",
+      "clave_demo": "demo-e0zAc3JXrThl",
+      "rol": "juez",
+      "juez_id": "jueza-laura-ficticia"
+    },
+    {
+      "usuario": "martin",
+      "clave_demo": "demo-A59go82JKnHE",
+      "rol": "juez",
+      "juez_id": "juez-martin-ejemplo"
+    },
+    {
+      "usuario": "fiscalia",
+      "clave_demo": "demo-MwikapSTnpBb",
+      "rol": "fiscalia",
+      "nombre": "Fiscalía (demostración)"
+    }
+  ],
+  "claves_firma_demo": {
+    "jueza-laura-ficticia": "demo-clave-laura-0b7e",
+    "juez-martin-ejemplo": "demo-clave-martin-4c21"
+  }
+}

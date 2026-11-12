@@ -1,0 +1,577 @@
+{
+ "id": "EXP-2026-000003",
+ "num": 3,
+ "titulo": "verpartido-hd.test",
+ "sitio": "verpartido-hd.test",
+ "creado_min": 9.022,
+ "estado": "cerrado",
+ "filtracion": {
+  "clave": "LP26-PRA-OFI-S010457",
+  "sesion": "S010457",
+  "marcas": [
+   "LP26-PRA-OFI-S010457"
+  ],
+  "prefijo": "LP26-PRA-OFI",
+  "origen": "Señal oficial del titular (plataforma propia)"
+ },
+ "dinamica": {
+  "activa": true,
+  "marcas": [
+   "LP26-PRA-OFI-S010457"
+  ],
+  "orden_marco": {
+   "id": "OM-01",
+   "entrada": 3,
+   "huella": "dc4b858e2bcee10a90073371a18a62b36fdefaa57bf2a37ef98549d97157fdb4",
+   "nombre": "Dra. Laura Ficticia",
+   "min": 0.16
+  },
+  "otorgada_por": {
+   "juez_id": "jueza-laura-ficticia",
+   "nombre": "Dra. Laura Ficticia"
+  },
+  "otorgada_min": 9.37,
+  "entrada": 55,
+  "respaldada_por": "juez-martin-ejemplo",
+  "requiere_ratificacion": false,
+  "ratificaciones": [
+   {
+    "juez_id": "juez-martin-ejemplo",
+    "nombre": "Dr. Martín Ejemplo",
+    "min": 50.55,
+    "entrada": 114
+   }
+  ],
+  "revocada": null
+ },
+ "corte_en_origen": {
+  "min": 9.022,
+  "sesion": "S010457",
+  "texto": "Constancia de aviso al titular (Liga Profesional Ficticia): la sesión S010457 de su plataforma es la que se está filtrando; cortarla le corresponde al titular. La plataforma no corta nada: deja constancia del aviso. (Simulado: el simulador no tiene esa API.)"
+ },
+ "ubicaciones": [
+  {
+   "n": 1,
+   "ref": "EXP-2026-000003/U1",
+   "estado": "aprobada",
+   "host": "tv.verpartido-hd.test",
+   "ip": "192.0.2.50",
+   "host_stream": "tv.verpartido-hd.test",
+   "asn": 64620,
+   "organizacion": "Pampa Web Hosting Compartido (ficticio)",
+   "pagina": "https://verpartido-hd.test/vivo",
+   "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 9.0,
+   "ultima_deteccion_min": 99.0,
+   "detecciones": [
+    "D-0004",
+    "D-0007",
+    "D-0011",
+    "D-0015",
+    "D-0019",
+    "D-0024",
+    "D-0028",
+    "D-0032",
+    "D-0037",
+    "D-0041"
+   ],
+   "detecciones_min": [
+    9.0,
+    19.0,
+    29.0,
+    39.0,
+    49.0,
+    59.0,
+    69.0,
+    79.0,
+    89.0,
+    99.0
+   ],
+   "continuidad": null,
+   "senal": {
+    "marca": "LP26-PRA-OFI-S010457",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S010457",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S010457). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "b3e5dd0f6977847eea9f86d67cc43e2d8b9aa378b92a131fa358e10db718b796",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 9.0,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "tv.verpartido-hd.test",
+     "verpartido-hd.test",
+     "panaderia-la-espiga.test",
+     "club-atletico-barrio-norte.test",
+     "escuela-tecnica-12.test",
+     "estudio-contable-ruiz.test"
+    ],
+    "propios": [
+     "tv.verpartido-hd.test",
+     "verpartido-hd.test"
+    ],
+    "ajenos": [
+     "panaderia-la-espiga.test",
+     "club-atletico-barrio-norte.test",
+     "escuela-tecnica-12.test",
+     "estudio-contable-ruiz.test"
+    ],
+    "observados": [
+     "tv.verpartido-hd.test",
+     "verpartido-hd.test"
+    ],
+    "inferidos": [],
+    "red_compartida": true,
+    "riesgo": "alto",
+    "recomendacion": "dominio",
+    "motivo": "La IP aloja otros 4 sitios que no tienen que ver con el pirata (panaderia-la-espiga.test, club-atletico-barrio-norte.test y 2 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "telegram",
+     "url": "https://t.example/verpartidohd",
+     "minuto": 7.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "dominio",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por dominio de tv.verpartido-hd.test hasta el minuto 105 (final del partido). La IP aloja otros 4 sitios que no tienen que ver con el pirata (panaderia-la-espiga.test, club-atletico-barrio-norte.test y 2 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "dominio",
+       "objetivo": "tv.verpartido-hd.test"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "dominio",
+       "objetivo": "tv.verpartido-hd.test"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "tv.verpartido-hd.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "dominio",
+       "objetivo": "tv.verpartido-hd.test"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "7d08845b710c3b8397830a23edfbc821f927afc86f151d2a697f5d0c8a8b2faf",
+   "armado_min": 9.022,
+   "armado_utc": "2026-11-12T17:30:18.459Z",
+   "asignada_a": "jueza-laura-ficticia",
+   "notificada_min": 9.022,
+   "vista_min": 9.052,
+   "decision": {
+    "tipo": "firma",
+    "aprobada": true,
+    "juez_id": "jueza-laura-ficticia",
+    "juez": "Dra. Laura Ficticia",
+    "juzgado_id": "jg-centro-3",
+    "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+    "min": 9.37,
+    "utc": "2026-11-12T17:30:19.511Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "7dc0180603cf8102e5f38705ee9e5e13",
+    "entrada": 55,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "dominio",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por dominio de tv.verpartido-hd.test hasta el minuto 105 (final del partido). La IP aloja otros 4 sitios que no tienen que ver con el pirata (panaderia-la-espiga.test, club-atletico-barrio-norte.test y 2 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": null,
+    "texto": "Firmada por Dra. Laura Ficticia en el minuto 9,4 (entrada 55)"
+   },
+   "automatica": {
+    "posible": false,
+    "motivo": "es el primer servidor de esta filtración: lo decide el juez."
+   },
+   "operacion": [
+    "verpartido-hd.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000003",
+    "ubicacion": 1,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0004",
+     "minuto": 9.0,
+     "pagina": "https://verpartido-hd.test/vivo",
+     "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+     "host_stream": "tv.verpartido-hd.test",
+     "ip_servidor": "192.0.2.50",
+     "asn": 64620,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S010457",
+     "captura": {
+      "capturada_min": 9.0,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R5ZW+FE1lPhjsVnEzdSZpMGTL1DXtIcHUPzBRZNIaZJw1k2CN88xkIJmNZS0qrErH2zcZzzs5C6gOPr/mhziJg=="
+     },
+     "promocion": [
+      {
+       "red": "telegram",
+       "url": "https://t.example/verpartidohd",
+       "minuto": 7.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "b3e5dd0f6977847eea9f86d67cc43e2d8b9aa378b92a131fa358e10db718b796",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 9.0,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S010457",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S010457",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S010457). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://verpartido-hd.test/vivo",
+     "stream_url": "https://tv.verpartido-hd.test/hls/en-vivo/index.m3u8",
+     "host": "tv.verpartido-hd.test",
+     "ip": "192.0.2.50",
+     "asn": 64620,
+     "organizacion": "Pampa Web Hosting Compartido (ficticio)",
+     "host_crudo": "tv.verpartido-hd.test",
+     "nombres_crudos": {
+      "tv.verpartido-hd.test": "tv.verpartido-hd.test",
+      "verpartido-hd.test": "verpartido-hd.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "192.0.2.50": {
+       "ip": "192.0.2.50",
+       "asn": 64620,
+       "organizacion": "Pampa Web Hosting Compartido (ficticio)",
+       "dominios": [
+        "tv.verpartido-hd.test",
+        "verpartido-hd.test",
+        "panaderia-la-espiga.test",
+        "club-atletico-barrio-norte.test",
+        "escuela-tecnica-12.test",
+        "estudio-contable-ruiz.test"
+       ]
+      }
+     },
+     "por_host": {
+      "tv.verpartido-hd.test": {
+       "dominio": "tv.verpartido-hd.test",
+       "ips": [
+        {
+         "ip": "192.0.2.50",
+         "asn": 64620,
+         "organizacion": "Pampa Web Hosting Compartido (ficticio)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 9.022
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "tv.verpartido-hd.test",
+      "verpartido-hd.test",
+      "panaderia-la-espiga.test",
+      "club-atletico-barrio-norte.test",
+      "escuela-tecnica-12.test",
+      "estudio-contable-ruiz.test"
+     ],
+     "propios": [
+      "tv.verpartido-hd.test",
+      "verpartido-hd.test"
+     ],
+     "ajenos": [
+      "panaderia-la-espiga.test",
+      "club-atletico-barrio-norte.test",
+      "escuela-tecnica-12.test",
+      "estudio-contable-ruiz.test"
+     ],
+     "observados": [
+      "tv.verpartido-hd.test",
+      "verpartido-hd.test"
+     ],
+     "inferidos": [],
+     "red_compartida": true,
+     "riesgo": "alto",
+     "recomendacion": "dominio",
+     "motivo": "La IP aloja otros 4 sitios que no tienen que ver con el pirata (panaderia-la-espiga.test, club-atletico-barrio-norte.test y 2 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "telegram",
+      "url": "https://t.example/verpartidohd",
+      "minuto": 7.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "dominio",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por dominio de tv.verpartido-hd.test hasta el minuto 105 (final del partido). La IP aloja otros 4 sitios que no tienen que ver con el pirata (panaderia-la-espiga.test, club-atletico-barrio-norte.test y 2 más). Bloquearla los dejaría sin servicio: se bloquea solo el nombre del stream.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "dominio",
+        "objetivo": "tv.verpartido-hd.test"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": null,
+    "armado": {
+     "min": 9.022,
+     "utc": "2026-11-12T17:30:18.459Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "ord-0003-u1-aurora-01-7dc0180603cf8102e5f38705ee9e5e13",
+     "proveedor": "aurora",
+     "tipo": "dominio",
+     "objetivo": "tv.verpartido-hd.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 9.37,
+     "recibida_min": 9.371,
+     "aplicada_min": 9.99,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000003",
+     "n": 1,
+     "k": 1,
+     "sello": "7dc0180603cf8102e5f38705ee9e5e13",
+     "entrada_sello": 55,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 9.37
+    },
+    {
+     "orden_id": "ord-0003-u1-andina-01-7dc0180603cf8102e5f38705ee9e5e13",
+     "proveedor": "andina",
+     "tipo": "dominio",
+     "objetivo": "tv.verpartido-hd.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 9.37,
+     "recibida_min": 9.372,
+     "aplicada_min": 11.146,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000003",
+     "n": 1,
+     "k": 1,
+     "sello": "7dc0180603cf8102e5f38705ee9e5e13",
+     "entrada_sello": 55,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 9.37
+    },
+    {
+     "orden_id": "ord-0003-u1-valle-01-7dc0180603cf8102e5f38705ee9e5e13",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "tv.verpartido-hd.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 9.37,
+     "recibida_min": 9.372,
+     "aplicada_min": 17.167,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000003",
+     "n": 1,
+     "k": 1,
+     "sello": "7dc0180603cf8102e5f38705ee9e5e13",
+     "entrada_sello": 55,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 9.37
+    },
+    {
+     "orden_id": "ord-0003-u1-cumbre-01-7dc0180603cf8102e5f38705ee9e5e13",
+     "proveedor": "cumbre",
+     "tipo": "dominio",
+     "objetivo": "tv.verpartido-hd.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 9.37,
+     "recibida_min": 9.373,
+     "aplicada_min": 12.96,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000003",
+     "n": 1,
+     "k": 1,
+     "sello": "7dc0180603cf8102e5f38705ee9e5e13",
+     "entrada_sello": 55,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 9.37
+    }
+   ],
+   "redetecciones": [
+    "D-0007",
+    "D-0011",
+    "D-0015",
+    "D-0019",
+    "D-0024",
+    "D-0028",
+    "D-0032",
+    "D-0037",
+    "D-0041"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 0.99,
+    "completo_min": 8.17,
+    "visibilidad_residual_pct": 1.5
+   },
+   "ventana": [
+    9.0,
+    105.0
+   ],
+   "tiempos": {
+    "deteccion_min": 9.0,
+    "firma_min": 9.37,
+    "primer_proveedor_min": 9.99,
+    "todos_los_proveedores_min": 17.167,
+    "expediente_abierto_min": 0.318,
+    "tipo": "en_persona"
+   }
+  }
+ ]
+}

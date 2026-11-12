@@ -1,0 +1,1728 @@
+{
+ "id": "EXP-2026-000001",
+ "num": 1,
+ "titulo": "pelotaya.test",
+ "sitio": "pelotaya.test",
+ "creado_min": 2.01,
+ "estado": "cerrado",
+ "filtracion": {
+  "clave": "LP26-PRA-OFI-S048211",
+  "sesion": "S048211",
+  "marcas": [
+   "LP26-PRA-OFI-S048211"
+  ],
+  "prefijo": "LP26-PRA-OFI",
+  "origen": "Señal oficial del titular (plataforma propia)"
+ },
+ "dinamica": {
+  "activa": true,
+  "marcas": [
+   "LP26-PRA-OFI-S048211"
+  ],
+  "orden_marco": {
+   "id": "OM-01",
+   "entrada": 3,
+   "huella": "dc4b858e2bcee10a90073371a18a62b36fdefaa57bf2a37ef98549d97157fdb4",
+   "nombre": "Dra. Laura Ficticia",
+   "min": 0.16
+  },
+  "otorgada_por": {
+   "juez_id": "jueza-laura-ficticia",
+   "nombre": "Dra. Laura Ficticia"
+  },
+  "otorgada_min": 2.34,
+  "entrada": 11,
+  "respaldada_por": "juez-martin-ejemplo",
+  "requiere_ratificacion": false,
+  "ratificaciones": [
+   {
+    "juez_id": "juez-martin-ejemplo",
+    "nombre": "Dr. Martín Ejemplo",
+    "min": 50.55,
+    "entrada": 114
+   }
+  ],
+  "revocada": null
+ },
+ "corte_en_origen": {
+  "min": 2.01,
+  "sesion": "S048211",
+  "texto": "Constancia de aviso al titular (Liga Profesional Ficticia): la sesión S048211 de su plataforma es la que se está filtrando; cortarla le corresponde al titular. La plataforma no corta nada: deja constancia del aviso. (Simulado: el simulador no tiene esa API.)"
+ },
+ "ubicaciones": [
+  {
+   "n": 1,
+   "ref": "EXP-2026-000001/U1",
+   "estado": "aprobada",
+   "host": "s1.pelotaya.test",
+   "ip": "203.0.113.10",
+   "host_stream": "s1.pelotaya.test",
+   "asn": 64600,
+   "organizacion": "Bruma Hosting Dedicado (ficticio)",
+   "pagina": "https://pelotaya.test/en-vivo",
+   "stream_url": "https://s1.pelotaya.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 2.0,
+   "ultima_deteccion_min": 32.0,
+   "detecciones": [
+    "D-0001",
+    "D-0005",
+    "D-0009",
+    "D-0012"
+   ],
+   "detecciones_min": [
+    2.0,
+    12.0,
+    22.0,
+    32.0
+   ],
+   "continuidad": null,
+   "senal": {
+    "marca": "LP26-PRA-OFI-S048211",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S048211",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S048211). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "77b14ea8874ef8bbbf99cc292fd820a9e8df09fa4d4c00ebaeb9003e6b9bfbe1",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 2.0,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "s1.pelotaya.test",
+     "s1-respaldo.pelotaya.test"
+    ],
+    "propios": [
+     "s1.pelotaya.test",
+     "s1-respaldo.pelotaya.test"
+    ],
+    "ajenos": [],
+    "observados": [
+     "s1.pelotaya.test"
+    ],
+    "inferidos": [
+     "s1-respaldo.pelotaya.test"
+    ],
+    "red_compartida": false,
+    "riesgo": "nulo",
+    "recomendacion": "ip",
+    "motivo": "La IP es exclusiva del sitio pirata: la plataforma vio s1.pelotaya.test, y toma también como suyo a s1-respaldo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "x",
+     "url": "https://x.example/futbolya_ok/status/1001",
+     "minuto": 1.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "ip",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por IP de 203.0.113.10 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata: la plataforma vio s1.pelotaya.test, y toma también como suyo a s1-respaldo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.10"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.10"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "s1.pelotaya.test"
+      },
+      {
+       "tipo": "dominio",
+       "objetivo": "s1-respaldo.pelotaya.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.10"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "609d288e159789631154eb7439dee7a8a8ca28a9ff092d98e96e78fbf69140b2",
+   "armado_min": 2.01,
+   "armado_utc": "2026-11-12T17:29:57.423Z",
+   "asignada_a": "jueza-laura-ficticia",
+   "notificada_min": 2.01,
+   "vista_min": 2.027,
+   "decision": {
+    "tipo": "firma",
+    "aprobada": true,
+    "juez_id": "jueza-laura-ficticia",
+    "juez": "Dra. Laura Ficticia",
+    "juzgado_id": "jg-centro-3",
+    "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+    "min": 2.34,
+    "utc": "2026-11-12T17:29:58.429Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "b818ac0f74abca576422723168828345",
+    "entrada": 11,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.10 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata: la plataforma vio s1.pelotaya.test, y toma también como suyo a s1-respaldo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.10"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.10"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "s1.pelotaya.test"
+       },
+       {
+        "tipo": "dominio",
+        "objetivo": "s1-respaldo.pelotaya.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.10"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": null,
+    "texto": "Firmada por Dra. Laura Ficticia en el minuto 2,3 (entrada 11)"
+   },
+   "automatica": {
+    "posible": false,
+    "motivo": "es el primer servidor de esta filtración: lo decide el juez."
+   },
+   "operacion": [
+    "pelotaya.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000001",
+    "ubicacion": 1,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0001",
+     "minuto": 2.0,
+     "pagina": "https://pelotaya.test/en-vivo",
+     "stream_url": "https://s1.pelotaya.test/hls/en-vivo/index.m3u8",
+     "host_stream": "s1.pelotaya.test",
+     "ip_servidor": "203.0.113.10",
+     "asn": 64600,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+     "captura": {
+      "capturada_min": 2.0,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R78wa6jDSwxuvnrbaeujx9QA6W2SWznDA23chX6X64YQcfhYYZSMMZwcKXGjb2FxD+oQxdoJxuAnpRn0QxEQ0Q=="
+     },
+     "promocion": [
+      {
+       "red": "x",
+       "url": "https://x.example/futbolya_ok/status/1001",
+       "minuto": 1.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "77b14ea8874ef8bbbf99cc292fd820a9e8df09fa4d4c00ebaeb9003e6b9bfbe1",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 2.0,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S048211",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S048211",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S048211). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://pelotaya.test/en-vivo",
+     "stream_url": "https://s1.pelotaya.test/hls/en-vivo/index.m3u8",
+     "host": "s1.pelotaya.test",
+     "ip": "203.0.113.10",
+     "asn": 64600,
+     "organizacion": "Bruma Hosting Dedicado (ficticio)",
+     "host_crudo": "s1.pelotaya.test",
+     "nombres_crudos": {
+      "s1.pelotaya.test": "s1.pelotaya.test",
+      "s1-respaldo.pelotaya.test": "s1-respaldo.pelotaya.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "203.0.113.10": {
+       "ip": "203.0.113.10",
+       "asn": 64600,
+       "organizacion": "Bruma Hosting Dedicado (ficticio)",
+       "dominios": [
+        "s1.pelotaya.test",
+        "s1-respaldo.pelotaya.test"
+       ]
+      }
+     },
+     "por_host": {
+      "s1.pelotaya.test": {
+       "dominio": "s1.pelotaya.test",
+       "ips": [
+        {
+         "ip": "203.0.113.10",
+         "asn": 64600,
+         "organizacion": "Bruma Hosting Dedicado (ficticio)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 2.009
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "s1.pelotaya.test",
+      "s1-respaldo.pelotaya.test"
+     ],
+     "propios": [
+      "s1.pelotaya.test",
+      "s1-respaldo.pelotaya.test"
+     ],
+     "ajenos": [],
+     "observados": [
+      "s1.pelotaya.test"
+     ],
+     "inferidos": [
+      "s1-respaldo.pelotaya.test"
+     ],
+     "red_compartida": false,
+     "riesgo": "nulo",
+     "recomendacion": "ip",
+     "motivo": "La IP es exclusiva del sitio pirata: la plataforma vio s1.pelotaya.test, y toma también como suyo a s1-respaldo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "x",
+      "url": "https://x.example/futbolya_ok/status/1001",
+      "minuto": 1.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.10 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata: la plataforma vio s1.pelotaya.test, y toma también como suyo a s1-respaldo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.10"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.10"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "s1.pelotaya.test"
+       },
+       {
+        "tipo": "dominio",
+        "objetivo": "s1-respaldo.pelotaya.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.10"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": null,
+    "armado": {
+     "min": 2.01,
+     "utc": "2026-11-12T17:29:57.423Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "ord-0001-u1-aurora-01-b818ac0f74abca576422723168828345",
+     "proveedor": "aurora",
+     "tipo": "ip",
+     "objetivo": "203.0.113.10",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 2.35,
+     "recibida_min": 2.351,
+     "aplicada_min": 2.752,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 1,
+     "k": 1,
+     "sello": "b818ac0f74abca576422723168828345",
+     "entrada_sello": 11,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 2.341
+    },
+    {
+     "orden_id": "ord-0001-u1-andina-01-b818ac0f74abca576422723168828345",
+     "proveedor": "andina",
+     "tipo": "ip",
+     "objetivo": "203.0.113.10",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 2.35,
+     "recibida_min": 2.351,
+     "aplicada_min": 4.043,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 1,
+     "k": 1,
+     "sello": "b818ac0f74abca576422723168828345",
+     "entrada_sello": 11,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 2.341
+    },
+    {
+     "orden_id": "ord-0001-u1-valle-01-b818ac0f74abca576422723168828345",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "s1.pelotaya.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 2.35,
+     "recibida_min": 2.353,
+     "aplicada_min": 7.873,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 1,
+     "k": 1,
+     "sello": "b818ac0f74abca576422723168828345",
+     "entrada_sello": 11,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 2.341
+    },
+    {
+     "orden_id": "ord-0001-u1-valle-02-b818ac0f74abca576422723168828345",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "s1-respaldo.pelotaya.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 2.35,
+     "recibida_min": 2.352,
+     "aplicada_min": 8.181,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 1,
+     "k": 2,
+     "sello": "b818ac0f74abca576422723168828345",
+     "entrada_sello": 11,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 2.341
+    },
+    {
+     "orden_id": "ord-0001-u1-cumbre-01-b818ac0f74abca576422723168828345",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "203.0.113.10",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 2.35,
+     "recibida_min": 2.352,
+     "aplicada_min": 6.054,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 1,
+     "k": 1,
+     "sello": "b818ac0f74abca576422723168828345",
+     "entrada_sello": 11,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 2.341
+    }
+   ],
+   "redetecciones": [
+    "D-0005",
+    "D-0009",
+    "D-0012"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 0.75,
+    "completo_min": 5.87,
+    "visibilidad_residual_pct": 3.5
+   },
+   "ventana": [
+    2.0,
+    37.5
+   ],
+   "tiempos": {
+    "deteccion_min": 2.0,
+    "firma_min": 2.34,
+    "primer_proveedor_min": 2.752,
+    "todos_los_proveedores_min": 7.873,
+    "expediente_abierto_min": 0.313,
+    "tipo": "en_persona"
+   }
+  },
+  {
+   "n": 2,
+   "ref": "EXP-2026-000001/U2",
+   "estado": "aprobada",
+   "host": "s2.pelotaya.test",
+   "ip": "203.0.113.11",
+   "host_stream": "s2.pelotaya.test",
+   "asn": 64600,
+   "organizacion": "Bruma Hosting Dedicado (ficticio)",
+   "pagina": "https://pelotaya.test/en-vivo",
+   "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 37.5,
+   "ultima_deteccion_min": 67.5,
+   "detecciones": [
+    "D-0014",
+    "D-0018",
+    "D-0023",
+    "D-0027"
+   ],
+   "detecciones_min": [
+    37.5,
+    47.5,
+    57.5,
+    67.5
+   ],
+   "continuidad": {
+    "de_ubicacion": 1,
+    "criterio": "misma_marca"
+   },
+   "senal": {
+    "marca": "LP26-PRA-OFI-S048211",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S048211",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S048211). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "f27a4a5fba9cfc873c9750f4186c354c253b9dcb696de7b8c2bc789e0217ebe7",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 37.5,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "s2.pelotaya.test"
+    ],
+    "propios": [
+     "s2.pelotaya.test"
+    ],
+    "ajenos": [],
+    "observados": [
+     "s2.pelotaya.test"
+    ],
+    "inferidos": [],
+    "red_compartida": false,
+    "riesgo": "nulo",
+    "recomendacion": "ip",
+    "motivo": "La IP es exclusiva del sitio pirata (s2.pelotaya.test). Bloquear la IP no afecta a nadie más.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "x",
+     "url": "https://x.example/futbolya_ok/status/1001",
+     "minuto": 1.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "ip",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por IP de 203.0.113.11 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (s2.pelotaya.test). Bloquear la IP no afecta a nadie más.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.11"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.11"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "s2.pelotaya.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.11"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "185ee0795cf30ead40110a1768b620c7d0955db18160a3728f46e007a3dbb5b2",
+   "armado_min": 37.562,
+   "armado_utc": "2026-11-12T17:31:44.081Z",
+   "asignada_a": "jueza-laura-ficticia",
+   "notificada_min": 37.562,
+   "vista_min": null,
+   "decision": {
+    "tipo": "ampliacion_dinamica",
+    "aprobada": true,
+    "juez_id": "jueza-laura-ficticia",
+    "juez": "Dra. Laura Ficticia",
+    "juzgado_id": "jg-centro-3",
+    "juzgado": "Juzgado de Garantías N.º 3 (ficticio) — Distrito Judicial Centro",
+    "min": 37.562,
+    "utc": "2026-11-12T17:31:44.082Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "8843e77ae067633b4634e119449b2db3",
+    "entrada": 83,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.11 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (s2.pelotaya.test). Bloquear la IP no afecta a nadie más.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.11"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.11"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "s2.pelotaya.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.11"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": {
+     "juez_id": "jueza-laura-ficticia",
+     "nombre": "Dra. Laura Ficticia",
+     "entrada": 11,
+     "min": 2.34,
+     "otorgada_por": {
+      "juez_id": "jueza-laura-ficticia",
+      "nombre": "Dra. Laura Ficticia",
+      "min": 2.34,
+      "entrada": 11
+     },
+     "ratificada_por": null
+    },
+    "texto": "Ampliación automática del sistema bajo la orden marco OM-01 de Dra. Laura Ficticia (minuto 0,2) y el seguimiento que otorgó en el minuto 2,3. No se firmó en persona.",
+    "otorgada_por": {
+     "juez_id": "jueza-laura-ficticia",
+     "nombre": "Dra. Laura Ficticia",
+     "min": 2.34,
+     "entrada": 11
+    },
+    "ratificada_por": null,
+    "orden_marco": {
+     "id": "OM-01",
+     "entrada": 3,
+     "huella": "dc4b858e2bcee10a90073371a18a62b36fdefaa57bf2a37ef98549d97157fdb4"
+    }
+   },
+   "automatica": {
+    "posible": true,
+    "motivo": null
+   },
+   "operacion": [
+    "pelotaya.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000001",
+    "ubicacion": 2,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0014",
+     "minuto": 37.5,
+     "pagina": "https://pelotaya.test/en-vivo",
+     "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+     "host_stream": "s2.pelotaya.test",
+     "ip_servidor": "203.0.113.11",
+     "asn": 64600,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+     "captura": {
+      "capturada_min": 37.5,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R4G2psD29qRNcRjBXhz26p6jlFAaX2qLfoxZdjZ8aQMen/BxHhgncoUUpHaWZIEYwwKXQ4GNJpILdyml+WJSAQ=="
+     },
+     "promocion": [
+      {
+       "red": "x",
+       "url": "https://x.example/futbolya_ok/status/1001",
+       "minuto": 1.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "f27a4a5fba9cfc873c9750f4186c354c253b9dcb696de7b8c2bc789e0217ebe7",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 37.5,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S048211",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S048211",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S048211). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://pelotaya.test/en-vivo",
+     "stream_url": "https://s2.pelotaya.test/hls/en-vivo/index.m3u8",
+     "host": "s2.pelotaya.test",
+     "ip": "203.0.113.11",
+     "asn": 64600,
+     "organizacion": "Bruma Hosting Dedicado (ficticio)",
+     "host_crudo": "s2.pelotaya.test",
+     "nombres_crudos": {
+      "s2.pelotaya.test": "s2.pelotaya.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "203.0.113.11": {
+       "ip": "203.0.113.11",
+       "asn": 64600,
+       "organizacion": "Bruma Hosting Dedicado (ficticio)",
+       "dominios": [
+        "s2.pelotaya.test"
+       ]
+      }
+     },
+     "por_host": {
+      "s2.pelotaya.test": {
+       "dominio": "s2.pelotaya.test",
+       "ips": [
+        {
+         "ip": "203.0.113.11",
+         "asn": 64600,
+         "organizacion": "Bruma Hosting Dedicado (ficticio)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 37.562
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "s2.pelotaya.test"
+     ],
+     "propios": [
+      "s2.pelotaya.test"
+     ],
+     "ajenos": [],
+     "observados": [
+      "s2.pelotaya.test"
+     ],
+     "inferidos": [],
+     "red_compartida": false,
+     "riesgo": "nulo",
+     "recomendacion": "ip",
+     "motivo": "La IP es exclusiva del sitio pirata (s2.pelotaya.test). Bloquear la IP no afecta a nadie más.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "x",
+      "url": "https://x.example/futbolya_ok/status/1001",
+      "minuto": 1.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.11 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (s2.pelotaya.test). Bloquear la IP no afecta a nadie más.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.11"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.11"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "s2.pelotaya.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.11"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": {
+     "ubicacion": 1,
+     "huella": "609d288e159789631154eb7439dee7a8a8ca28a9ff092d98e96e78fbf69140b2"
+    },
+    "armado": {
+     "min": 37.562,
+     "utc": "2026-11-12T17:31:44.081Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "amp-0001-u2-aurora-01-8843e77ae067633b4634e119449b2db3",
+     "proveedor": "aurora",
+     "tipo": "ip",
+     "objetivo": "203.0.113.11",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 37.56,
+     "recibida_min": 37.567,
+     "aplicada_min": 37.961,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 2,
+     "k": 1,
+     "sello": "8843e77ae067633b4634e119449b2db3",
+     "entrada_sello": 83,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 37.562
+    },
+    {
+     "orden_id": "amp-0001-u2-andina-01-8843e77ae067633b4634e119449b2db3",
+     "proveedor": "andina",
+     "tipo": "ip",
+     "objetivo": "203.0.113.11",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 37.56,
+     "recibida_min": 37.566,
+     "aplicada_min": 39.787,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 2,
+     "k": 1,
+     "sello": "8843e77ae067633b4634e119449b2db3",
+     "entrada_sello": 83,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 37.562
+    },
+    {
+     "orden_id": "amp-0001-u2-valle-01-8843e77ae067633b4634e119449b2db3",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "s2.pelotaya.test",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 37.56,
+     "recibida_min": 37.568,
+     "aplicada_min": 42.325,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 2,
+     "k": 1,
+     "sello": "8843e77ae067633b4634e119449b2db3",
+     "entrada_sello": 83,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 37.562
+    },
+    {
+     "orden_id": "amp-0001-u2-cumbre-01-8843e77ae067633b4634e119449b2db3",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "203.0.113.11",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "fallida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 37.56,
+     "recibida_min": 37.565,
+     "aplicada_min": null,
+     "finalizada_min": 39.992,
+     "motivo": "Error interno del proveedor. Reenviar la orden con un nuevo orden_id.",
+     "exp": "EXP-2026-000001",
+     "n": 2,
+     "k": 1,
+     "sello": "8843e77ae067633b4634e119449b2db3",
+     "entrada_sello": 83,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 37.562
+    },
+    {
+     "orden_id": "amp-0001-u2-cumbre-02-8843e77ae067633b4634e119449b2db3",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "203.0.113.11",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "fallida",
+     "intento": 2,
+     "origen": "reintento",
+     "reemplaza": "amp-0001-u2-cumbre-01-8843e77ae067633b4634e119449b2db3",
+     "enviada_min": 40.0,
+     "recibida_min": 40.001,
+     "aplicada_min": null,
+     "finalizada_min": 42.744,
+     "motivo": "Error interno del proveedor. Reenviar la orden con un nuevo orden_id.",
+     "exp": "EXP-2026-000001",
+     "n": 2,
+     "k": 2,
+     "sello": "8843e77ae067633b4634e119449b2db3",
+     "entrada_sello": 83,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 39.992
+    },
+    {
+     "orden_id": "amp-0001-u2-cumbre-03-8843e77ae067633b4634e119449b2db3",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "203.0.113.11",
+     "vence_min": 105,
+     "juez_id": "jueza-laura-ficticia",
+     "juzgado_id": "jg-centro-3",
+     "estado": "vencida",
+     "intento": 3,
+     "origen": "reintento",
+     "reemplaza": "amp-0001-u2-cumbre-02-8843e77ae067633b4634e119449b2db3",
+     "enviada_min": 42.74,
+     "recibida_min": 42.741,
+     "aplicada_min": 45.541,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 2,
+     "k": 3,
+     "sello": "8843e77ae067633b4634e119449b2db3",
+     "entrada_sello": 83,
+     "juez_decision": "jueza-laura-ficticia",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 42.744
+    }
+   ],
+   "redetecciones": [
+    "D-0018",
+    "D-0023",
+    "D-0027"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 0.46,
+    "completo_min": 8.04,
+    "visibilidad_residual_pct": 3.2
+   },
+   "ventana": [
+    37.5,
+    71.0
+   ],
+   "tiempos": {
+    "deteccion_min": 37.5,
+    "firma_min": 37.562,
+    "primer_proveedor_min": 37.961,
+    "todos_los_proveedores_min": 45.541,
+    "expediente_abierto_min": null,
+    "tipo": "ampliacion"
+   }
+  },
+  {
+   "n": 3,
+   "ref": "EXP-2026-000001/U3",
+   "estado": "aprobada",
+   "host": "s3.pelotaya.test",
+   "ip": "198.51.100.77",
+   "host_stream": "s3.pelotaya.test",
+   "asn": 64630,
+   "organizacion": "Servidores Litoral (ficticio)",
+   "pagina": "https://pelotaya.test/en-vivo",
+   "stream_url": "https://s3.pelotaya.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 71.0,
+   "ultima_deteccion_min": 101.0,
+   "detecciones": [
+    "D-0029",
+    "D-0033",
+    "D-0038",
+    "D-0042"
+   ],
+   "detecciones_min": [
+    71.0,
+    81.0,
+    91.0,
+    101.0
+   ],
+   "continuidad": {
+    "de_ubicacion": 2,
+    "criterio": "misma_marca"
+   },
+   "senal": {
+    "marca": "LP26-PRA-OFI-S048211",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S048211",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S048211). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "d34e0c24d029af9fd4e51398efa7a3f96d8b96fc6f67cb145f9b285968d8e227",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 71.0,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "s3.pelotaya.test",
+     "espejo.pelotaya.test"
+    ],
+    "propios": [
+     "s3.pelotaya.test",
+     "espejo.pelotaya.test"
+    ],
+    "ajenos": [],
+    "observados": [
+     "s3.pelotaya.test"
+    ],
+    "inferidos": [
+     "espejo.pelotaya.test"
+    ],
+    "red_compartida": false,
+    "riesgo": "nulo",
+    "recomendacion": "ip",
+    "motivo": "La IP es exclusiva del sitio pirata: la plataforma vio s3.pelotaya.test, y toma también como suyo a espejo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "x",
+     "url": "https://x.example/futbolya_ok/status/1001",
+     "minuto": 1.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "ip",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por IP de 198.51.100.77 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata: la plataforma vio s3.pelotaya.test, y toma también como suyo a espejo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "ip",
+       "objetivo": "198.51.100.77"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "ip",
+       "objetivo": "198.51.100.77"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "s3.pelotaya.test"
+      },
+      {
+       "tipo": "dominio",
+       "objetivo": "espejo.pelotaya.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "ip",
+       "objetivo": "198.51.100.77"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "0e0dc61c3fc54a8fb1c2582bd3e3fc88efad351131f39a7a3b82f346a6a153fd",
+   "armado_min": 71.004,
+   "armado_utc": "2026-11-12T17:33:24.408Z",
+   "asignada_a": "juez-martin-ejemplo",
+   "notificada_min": 71.004,
+   "vista_min": null,
+   "decision": {
+    "tipo": "ampliacion_dinamica",
+    "aprobada": true,
+    "juez_id": "juez-martin-ejemplo",
+    "juez": "Dr. Martín Ejemplo",
+    "juzgado_id": "jg-norte-1",
+    "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+    "min": 71.004,
+    "utc": "2026-11-12T17:33:24.410Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "5fa147b309e503cbfc75a826daeaeb90",
+    "entrada": 145,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 198.51.100.77 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata: la plataforma vio s3.pelotaya.test, y toma también como suyo a espejo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "198.51.100.77"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "198.51.100.77"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "s3.pelotaya.test"
+       },
+       {
+        "tipo": "dominio",
+        "objetivo": "espejo.pelotaya.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "198.51.100.77"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": {
+     "juez_id": "juez-martin-ejemplo",
+     "nombre": "Dr. Martín Ejemplo",
+     "entrada": 114,
+     "min": 50.55,
+     "otorgada_por": {
+      "juez_id": "jueza-laura-ficticia",
+      "nombre": "Dra. Laura Ficticia",
+      "min": 2.34,
+      "entrada": 11
+     },
+     "ratificada_por": {
+      "juez_id": "juez-martin-ejemplo",
+      "nombre": "Dr. Martín Ejemplo",
+      "min": 50.55,
+      "entrada": 114
+     }
+    },
+    "texto": "Ampliación automática del sistema bajo la orden marco OM-02 de Dr. Martín Ejemplo (minuto 50,2), que en el minuto 50,5 ratificó el seguimiento otorgado por Dra. Laura Ficticia (minuto 2,3). No se firmó en persona.",
+    "otorgada_por": {
+     "juez_id": "jueza-laura-ficticia",
+     "nombre": "Dra. Laura Ficticia",
+     "min": 2.34,
+     "entrada": 11
+    },
+    "ratificada_por": {
+     "juez_id": "juez-martin-ejemplo",
+     "nombre": "Dr. Martín Ejemplo",
+     "min": 50.55,
+     "entrada": 114
+    },
+    "orden_marco": {
+     "id": "OM-02",
+     "entrada": 113,
+     "huella": "f8535052acf78f69f65cf94af1de21d8d46ac3434ae4c53aacf07d37f519ff26"
+    }
+   },
+   "automatica": {
+    "posible": true,
+    "motivo": null
+   },
+   "operacion": [
+    "pelotaya.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000001",
+    "ubicacion": 3,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0029",
+     "minuto": 71.0,
+     "pagina": "https://pelotaya.test/en-vivo",
+     "stream_url": "https://s3.pelotaya.test/hls/en-vivo/index.m3u8",
+     "host_stream": "s3.pelotaya.test",
+     "ip_servidor": "198.51.100.77",
+     "asn": 64630,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S048211",
+     "captura": {
+      "capturada_min": 71.0,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R55ddbmFCeuipPhv1IBxdOKuwe1R/bCqco/NkhitMfiiiSOmxMTTiGF+2fUOmeGSapQ2czxJdpglKu6qr0YHOw=="
+     },
+     "promocion": [
+      {
+       "red": "x",
+       "url": "https://x.example/futbolya_ok/status/1001",
+       "minuto": 1.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "d34e0c24d029af9fd4e51398efa7a3f96d8b96fc6f67cb145f9b285968d8e227",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 71.0,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S048211",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S048211",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S048211). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://pelotaya.test/en-vivo",
+     "stream_url": "https://s3.pelotaya.test/hls/en-vivo/index.m3u8",
+     "host": "s3.pelotaya.test",
+     "ip": "198.51.100.77",
+     "asn": 64630,
+     "organizacion": "Servidores Litoral (ficticio)",
+     "host_crudo": "s3.pelotaya.test",
+     "nombres_crudos": {
+      "s3.pelotaya.test": "s3.pelotaya.test",
+      "espejo.pelotaya.test": "espejo.pelotaya.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "198.51.100.77": {
+       "ip": "198.51.100.77",
+       "asn": 64630,
+       "organizacion": "Servidores Litoral (ficticio)",
+       "dominios": [
+        "s3.pelotaya.test",
+        "espejo.pelotaya.test"
+       ]
+      }
+     },
+     "por_host": {
+      "s3.pelotaya.test": {
+       "dominio": "s3.pelotaya.test",
+       "ips": [
+        {
+         "ip": "198.51.100.77",
+         "asn": 64630,
+         "organizacion": "Servidores Litoral (ficticio)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 71.003
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "s3.pelotaya.test",
+      "espejo.pelotaya.test"
+     ],
+     "propios": [
+      "s3.pelotaya.test",
+      "espejo.pelotaya.test"
+     ],
+     "ajenos": [],
+     "observados": [
+      "s3.pelotaya.test"
+     ],
+     "inferidos": [
+      "espejo.pelotaya.test"
+     ],
+     "red_compartida": false,
+     "riesgo": "nulo",
+     "recomendacion": "ip",
+     "motivo": "La IP es exclusiva del sitio pirata: la plataforma vio s3.pelotaya.test, y toma también como suyo a espejo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "x",
+      "url": "https://x.example/futbolya_ok/status/1001",
+      "minuto": 1.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 198.51.100.77 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata: la plataforma vio s3.pelotaya.test, y toma también como suyo a espejo.pelotaya.test, porque cuelga de pelotaya.test, donde está la página del pirata. Bloquear la IP corta los dos nombres.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "198.51.100.77"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "198.51.100.77"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "s3.pelotaya.test"
+       },
+       {
+        "tipo": "dominio",
+        "objetivo": "espejo.pelotaya.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "198.51.100.77"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": {
+     "ubicacion": 2,
+     "huella": "185ee0795cf30ead40110a1768b620c7d0955db18160a3728f46e007a3dbb5b2"
+    },
+    "armado": {
+     "min": 71.004,
+     "utc": "2026-11-12T17:33:24.408Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "amp-0001-u3-aurora-01-5fa147b309e503cbfc75a826daeaeb90",
+     "proveedor": "aurora",
+     "tipo": "ip",
+     "objetivo": "198.51.100.77",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 71.01,
+     "recibida_min": 71.015,
+     "aplicada_min": 71.401,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 3,
+     "k": 1,
+     "sello": "5fa147b309e503cbfc75a826daeaeb90",
+     "entrada_sello": 145,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 71.004
+    },
+    {
+     "orden_id": "amp-0001-u3-andina-01-5fa147b309e503cbfc75a826daeaeb90",
+     "proveedor": "andina",
+     "tipo": "ip",
+     "objetivo": "198.51.100.77",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 71.01,
+     "recibida_min": 71.011,
+     "aplicada_min": 72.662,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 3,
+     "k": 1,
+     "sello": "5fa147b309e503cbfc75a826daeaeb90",
+     "entrada_sello": 145,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 71.004
+    },
+    {
+     "orden_id": "amp-0001-u3-valle-01-5fa147b309e503cbfc75a826daeaeb90",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "s3.pelotaya.test",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 71.01,
+     "recibida_min": 71.013,
+     "aplicada_min": 76.449,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 3,
+     "k": 1,
+     "sello": "5fa147b309e503cbfc75a826daeaeb90",
+     "entrada_sello": 145,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 71.004
+    },
+    {
+     "orden_id": "amp-0001-u3-valle-02-5fa147b309e503cbfc75a826daeaeb90",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "espejo.pelotaya.test",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 71.01,
+     "recibida_min": 71.018,
+     "aplicada_min": 78.217,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 3,
+     "k": 2,
+     "sello": "5fa147b309e503cbfc75a826daeaeb90",
+     "entrada_sello": 145,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 71.004
+    },
+    {
+     "orden_id": "amp-0001-u3-cumbre-01-5fa147b309e503cbfc75a826daeaeb90",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "198.51.100.77",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "fallida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 71.01,
+     "recibida_min": 71.016,
+     "aplicada_min": null,
+     "finalizada_min": 74.129,
+     "motivo": "Error interno del proveedor. Reenviar la orden con un nuevo orden_id.",
+     "exp": "EXP-2026-000001",
+     "n": 3,
+     "k": 1,
+     "sello": "5fa147b309e503cbfc75a826daeaeb90",
+     "entrada_sello": 145,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 71.004
+    },
+    {
+     "orden_id": "amp-0001-u3-cumbre-02-5fa147b309e503cbfc75a826daeaeb90",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "198.51.100.77",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 2,
+     "origen": "reintento",
+     "reemplaza": "amp-0001-u3-cumbre-01-5fa147b309e503cbfc75a826daeaeb90",
+     "enviada_min": 74.13,
+     "recibida_min": 74.13,
+     "aplicada_min": 77.362,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000001",
+     "n": 3,
+     "k": 2,
+     "sello": "5fa147b309e503cbfc75a826daeaeb90",
+     "entrada_sello": 145,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 74.129
+    }
+   ],
+   "redetecciones": [
+    "D-0033",
+    "D-0038",
+    "D-0042"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 0.4,
+    "completo_min": 6.36,
+    "visibilidad_residual_pct": 2.6
+   },
+   "ventana": [
+    71.0,
+    105.0
+   ],
+   "tiempos": {
+    "deteccion_min": 71.0,
+    "firma_min": 71.004,
+    "primer_proveedor_min": 71.401,
+    "todos_los_proveedores_min": 77.362,
+    "expediente_abierto_min": null,
+    "tipo": "ampliacion"
+   }
+  }
+ ]
+}

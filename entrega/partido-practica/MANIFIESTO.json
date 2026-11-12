@@ -1,0 +1,281 @@
+{
+ "version": 1,
+ "plataforma": "1.0.0",
+ "archivos": [
+  {
+   "ruta": "LEEME.md",
+   "bytes": 2176,
+   "sha256": "b82e07475e92543ebc1b86e3c9be668ef16dca55105d6856c771f744a5de1109"
+  },
+  {
+   "ruta": "acta-del-partido.md",
+   "bytes": 4653,
+   "sha256": "4326b38778e7c9fcbc56f2d5705b277d653f1959dd05a5361740758082b55255"
+  },
+  {
+   "ruta": "auditoria.jsonl",
+   "bytes": 109424,
+   "sha256": "ae3c6bf1f29aab5d52bbf471329bd0b0257eb23249f628c16148e68f361b1302"
+  },
+  {
+   "ruta": "capturas/D-0001.ts",
+   "bytes": 64,
+   "sha256": "77b14ea8874ef8bbbf99cc292fd820a9e8df09fa4d4c00ebaeb9003e6b9bfbe1"
+  },
+  {
+   "ruta": "capturas/D-0003.ts",
+   "bytes": 64,
+   "sha256": "485b937379e696ae00920a738d03b3062ef615309dda5a10b2eb90a001f6665e"
+  },
+  {
+   "ruta": "capturas/D-0004.ts",
+   "bytes": 64,
+   "sha256": "b3e5dd0f6977847eea9f86d67cc43e2d8b9aa378b92a131fa358e10db718b796"
+  },
+  {
+   "ruta": "capturas/D-0005.ts",
+   "bytes": 64,
+   "sha256": "531f3f50ce31a28677c30ebc39bf1b9ed1d3570262f136f4661bb57ae157948e"
+  },
+  {
+   "ruta": "capturas/D-0006.ts",
+   "bytes": 64,
+   "sha256": "476df8927ad67696430a56012f698616b16ce9dd741a912c9b0e2ab2ee65fa4d"
+  },
+  {
+   "ruta": "capturas/D-0007.ts",
+   "bytes": 64,
+   "sha256": "bc6eae3469b9a893a1953f7834cc86e2c2294d13e269f0abfcbc299e5d67843e"
+  },
+  {
+   "ruta": "capturas/D-0009.ts",
+   "bytes": 64,
+   "sha256": "e292b8ce55850405b2bfccc50a8f615fdef40c74c7a59d9086bcf1b7d43810f1"
+  },
+  {
+   "ruta": "capturas/D-0010.ts",
+   "bytes": 64,
+   "sha256": "335deef52e9f3ea119b518bc373389011d542ae75000b76acd3e92c28299a1d4"
+  },
+  {
+   "ruta": "capturas/D-0011.ts",
+   "bytes": 64,
+   "sha256": "ab0f61a33b7dfbb0ea3f5383224ad66b454c68aa7df3c4f9c8399972db3d9960"
+  },
+  {
+   "ruta": "capturas/D-0012.ts",
+   "bytes": 64,
+   "sha256": "ebd95d498f843ac52f7e0fcfe36a7013a510cfc5c1dcf3952929efdb583f30c8"
+  },
+  {
+   "ruta": "capturas/D-0013.ts",
+   "bytes": 64,
+   "sha256": "95c46e4fc8389fba2285acb68bfbf5e56a7bfdc820f9073c61c11c84870e727a"
+  },
+  {
+   "ruta": "capturas/D-0014.ts",
+   "bytes": 64,
+   "sha256": "f27a4a5fba9cfc873c9750f4186c354c253b9dcb696de7b8c2bc789e0217ebe7"
+  },
+  {
+   "ruta": "capturas/D-0015.ts",
+   "bytes": 64,
+   "sha256": "b30c8546299a611c6f1578c83537ec1c82c7d54a63bf550ca743bddfc5dce3e5"
+  },
+  {
+   "ruta": "capturas/D-0017.ts",
+   "bytes": 64,
+   "sha256": "f1d7e43b8cac01917e90cff9a6cbd802f0ee31622476c0a4ab969c9d3c3ac744"
+  },
+  {
+   "ruta": "capturas/D-0018.ts",
+   "bytes": 64,
+   "sha256": "9599883ea344a37cae84b60cf0843560e94ab7e4ffcc20df5a6c594be29ab3ec"
+  },
+  {
+   "ruta": "capturas/D-0019.ts",
+   "bytes": 64,
+   "sha256": "aab0acb53f8cc1ca0f371d7ccdded80c2972c8c8349d25105769ea50e1a420b1"
+  },
+  {
+   "ruta": "capturas/D-0021.ts",
+   "bytes": 64,
+   "sha256": "5e3d43564f3ab28fd6d042ea219ea19c302093798435a7d197b3f64092d6a6e6"
+  },
+  {
+   "ruta": "capturas/D-0022.ts",
+   "bytes": 64,
+   "sha256": "ffeddb9173b097b7e760a1388ab086fed9bd5eb4b3c6fa931a716d7f029c5514"
+  },
+  {
+   "ruta": "capturas/D-0023.ts",
+   "bytes": 64,
+   "sha256": "3ebbbcfccd44e067e86b258e0f6109a02ff5fdaed5907569135ce620a64e85d1"
+  },
+  {
+   "ruta": "capturas/D-0024.ts",
+   "bytes": 64,
+   "sha256": "4455adee60ab1cc6890589018efa0093e614a02f04d56e9d5fbd5e8daed6b37c"
+  },
+  {
+   "ruta": "capturas/D-0025.ts",
+   "bytes": 64,
+   "sha256": "2f5e151797e1ace2fc6048b7daf4ddf1538383bce9950389dc760c673bbb0562"
+  },
+  {
+   "ruta": "capturas/D-0026.ts",
+   "bytes": 64,
+   "sha256": "851ec43052c6e057945fb369b9a127034f6c7ce58ec2dcc12ded6e0aa645c611"
+  },
+  {
+   "ruta": "capturas/D-0027.ts",
+   "bytes": 64,
+   "sha256": "7f3481262aaded72da331ecf29ed6d93be271a9d919919f5305bb092071849c6"
+  },
+  {
+   "ruta": "capturas/D-0028.ts",
+   "bytes": 64,
+   "sha256": "44aea620b8e7a89ec6207b5b1e5f210e4a5dd6664c158ffda8220db360fbab46"
+  },
+  {
+   "ruta": "capturas/D-0029.ts",
+   "bytes": 64,
+   "sha256": "d34e0c24d029af9fd4e51398efa7a3f96d8b96fc6f67cb145f9b285968d8e227"
+  },
+  {
+   "ruta": "capturas/D-0030.ts",
+   "bytes": 64,
+   "sha256": "6777a82ff42fdb4928359b6402df0798e8325676c507aa47e5e3d43e7eeadf5f"
+  },
+  {
+   "ruta": "capturas/D-0031.ts",
+   "bytes": 64,
+   "sha256": "64ff450fa777ea9ca2b7ce36c90bfe3c6f89a7254c091aec2db746371e969985"
+  },
+  {
+   "ruta": "capturas/D-0032.ts",
+   "bytes": 64,
+   "sha256": "b5df180b02c8d417486b97d0c67135a95a88419794a652ce05e3ddb83452ebd0"
+  },
+  {
+   "ruta": "capturas/D-0033.ts",
+   "bytes": 64,
+   "sha256": "2659f28233bf3a0be71a2de09bb21b5d831b9b3f6014b196908685cfd63107ab"
+  },
+  {
+   "ruta": "capturas/D-0034.ts",
+   "bytes": 64,
+   "sha256": "767fccc3e8c85585c487925e6d3b8f51e3dd4d796d61cebb11fc2b6e9b2828ee"
+  },
+  {
+   "ruta": "capturas/D-0036.ts",
+   "bytes": 64,
+   "sha256": "a37d351e9aea24382ed7c483772536ec713791b0e769b9bf87e0c44b1ef40432"
+  },
+  {
+   "ruta": "capturas/D-0037.ts",
+   "bytes": 64,
+   "sha256": "b8c2ceda8fa5a16f5dbf1831e22ee8d57915ee7f29ee666bd1373a01408b25ab"
+  },
+  {
+   "ruta": "capturas/D-0038.ts",
+   "bytes": 64,
+   "sha256": "0aeff816862f08f953b136ce68fef8cbe089759c6f1a8d7987049d5039604926"
+  },
+  {
+   "ruta": "capturas/D-0039.ts",
+   "bytes": 64,
+   "sha256": "251796ec5a50f39186ddc58702ae2b6c09f2ac2101528d40e71a695c08fb41dd"
+  },
+  {
+   "ruta": "capturas/D-0040.ts",
+   "bytes": 64,
+   "sha256": "cc4ea1fc07084930b6dd357bfc3adb38dc42ccd75433e4d6a896233618219572"
+  },
+  {
+   "ruta": "capturas/D-0041.ts",
+   "bytes": 64,
+   "sha256": "06062567f79111d4d3429ba8312b212bdfe69b8b2e37022449adaaf708ebdb8a"
+  },
+  {
+   "ruta": "capturas/D-0042.ts",
+   "bytes": 64,
+   "sha256": "5d37f9ff4e0419484ce90efbc45e31fc9d9aed994aedf844fe01b0bba0e92188"
+  },
+  {
+   "ruta": "capturas/D-0043.ts",
+   "bytes": 64,
+   "sha256": "cdae9850e2f0202d95cda22aa487785987580ad8d3b40498410ba8c120fd09bd"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000001.json",
+   "bytes": 49228,
+   "sha256": "7a5c821f3000beab23e3ae55b28bec2d7c1f87abb03bf0bca606f00f606d8e69"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000001.md",
+   "bytes": 8225,
+   "sha256": "fe5e0146a93a6448627963c03bf517f9e5d6428d080bc3263fdcec4ab8dbc771"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000002.json",
+   "bytes": 17585,
+   "sha256": "efad20f2612f57e3d03a3804388e425714b76167094d6eebac1d9ff2685f12da"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000002.md",
+   "bytes": 2838,
+   "sha256": "609c24e28409672c4b791d47bcc4ee214db75cba39182483b9a1cd1de59ec18b"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000003.json",
+   "bytes": 16295,
+   "sha256": "afba3c061dbf9cd7566c30ad93502b8b3ac8669e6b4baf3c7d0a366beb6f29ee"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000003.md",
+   "bytes": 2748,
+   "sha256": "70ebb339c46570e15b57706e07f1864d82dd6e04a30d0a514b60ce8a2d535c10"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000004.json",
+   "bytes": 29310,
+   "sha256": "33d6fc5b2469127dc0b58b592f10e3d4cccfff42e63cfa22885a04d938b22438"
+  },
+  {
+   "ruta": "expedientes/EXP-2026-000004.md",
+   "bytes": 4924,
+   "sha256": "5523cc935c7ff6529189923bb35e7d8865ec593cb43749dd47002418a8e7ba22"
+  },
+  {
+   "ruta": "orden-marco/OM-01.json",
+   "bytes": 3799,
+   "sha256": "2df02bd7ac22795027ce7ec700d4eb6ec2cf63e0ac8817e558c65b6c38413ee6"
+  },
+  {
+   "ruta": "orden-marco/OM-01.md",
+   "bytes": 2353,
+   "sha256": "876252df703b754537201ce996a5d3f271496dcb7a9d9d2af4af27a0a6bbbeba"
+  },
+  {
+   "ruta": "orden-marco/OM-02.json",
+   "bytes": 3906,
+   "sha256": "e4be44f112277bf24775685f721f0121b83d2c93c27f10e4ab43066207c9782b"
+  },
+  {
+   "ruta": "orden-marco/OM-02.md",
+   "bytes": 2431,
+   "sha256": "446d643d3a1bc214088d7a3c047473c5abbea898dacdc6b167f9d6e3167cabb7"
+  },
+  {
+   "ruta": "resumen.json",
+   "bytes": 7026,
+   "sha256": "31bef040be90217d4a7b8d1ecec22d2daf4d2306ccdf26461acfa763c4caaddf"
+  },
+  {
+   "ruta": "testigos/proveedores.json",
+   "bytes": 12920,
+   "sha256": "82759f1784924e5820fe4b580f5f1196ac155886a5c12bf634b23e1c994adbc2"
+  }
+ ]
+}

@@ -1,0 +1,289 @@
+{
+ "formato": 3,
+ "plataforma": "1.0.0",
+ "partido": {
+  "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+  "titular_derechos": "Liga Profesional Ficticia",
+  "inicio_iso": "2026-11-11T18:00:00-03:00",
+  "fin_min": 105,
+  "marcas_de_agua_validas": [
+   {
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)"
+   },
+   {
+    "prefijo": "LP26-PRA-LIC-NORTE",
+    "origen": "Licenciatario autorizado: Canal Norte TV (ficticio)"
+   }
+  ],
+  "licenciatarios": [
+   {
+    "nombre": "Canal Norte TV (ficticio)",
+    "prefijo_marca": "LP26-PRA-LIC-NORTE",
+    "dominios_autorizados": [
+     "canalnorte.test",
+     "envivo.canalnorte.test"
+    ]
+   }
+  ],
+  "id": "practica-01"
+ },
+ "proveedores": [
+  {
+   "id": "aurora",
+   "nombre": "Conectividad Aurora (ficticio)",
+   "tamano": "grande",
+   "clientes": 3800000,
+   "capacidades": [
+    "ip",
+    "dominio"
+   ],
+   "ordenes": "/proveedores/aurora/ordenes"
+  },
+  {
+   "id": "andina",
+   "nombre": "Red Andina Telecom (ficticio)",
+   "tamano": "mediano",
+   "clientes": 1200000,
+   "capacidades": [
+    "ip",
+    "dominio"
+   ],
+   "ordenes": "/proveedores/andina/ordenes"
+  },
+  {
+   "id": "valle",
+   "nombre": "FibraValle (ficticio)",
+   "tamano": "chico",
+   "clientes": 140000,
+   "capacidades": [
+    "dominio"
+   ],
+   "ordenes": "/proveedores/valle/ordenes"
+  },
+  {
+   "id": "cumbre",
+   "nombre": "Cooperativa Cumbre Conecta (ficticio)",
+   "tamano": "chico",
+   "clientes": 60000,
+   "capacidades": [
+    "ip",
+    "dominio"
+   ],
+   "ordenes": "/proveedores/cumbre/ordenes"
+  }
+ ],
+ "simulador": "http://127.0.0.1:8900",
+ "minuto": 110.041,
+ "descartes": [
+  {
+   "deteccion_id": "D-0002",
+   "minuto": 4.0,
+   "host": "envivo.canalnorte.test",
+   "ip": "192.0.2.10",
+   "pagina": "https://canalnorte.test/en-vivo",
+   "marca": "LP26-PRA-LIC-NORTE",
+   "clase": "licenciatario",
+   "motivo": "Retransmisión autorizada: el servidor está dentro de los dominios autorizados de Canal Norte TV (ficticio). Nunca se bloquea.",
+   "veces": 3,
+   "ultima_min": 84.0
+  },
+  {
+   "deteccion_id": "D-0008",
+   "minuto": 20.0,
+   "host": "vod.resumenes-deportivos.test",
+   "ip": "198.51.100.90",
+   "pagina": "https://resumenes-deportivos.test/fecha-3",
+   "marca": "LP25-F03-OFI-S102934",
+   "clase": "otra_senal",
+   "motivo": "La marca de agua LP25-F03-OFI-S102934 no corresponde a ninguna señal de este partido: no es la señal que se protege y no se bloquea.",
+   "veces": 2,
+   "ultima_min": 50.0
+  }
+ ],
+ "reclamos": [],
+ "traspasos": [
+  {
+   "min": 50.005,
+   "de": [
+    {
+     "juez_id": "jueza-laura-ficticia",
+     "nombre": "Dra. Laura Ficticia"
+    }
+   ],
+   "a": [
+    {
+     "juez_id": "juez-martin-ejemplo",
+     "nombre": "Dr. Martín Ejemplo"
+    }
+   ],
+   "requiere_ratificacion": false,
+   "ratificado": {
+    "juez_id": "juez-martin-ejemplo",
+    "nombre": "Dr. Martín Ejemplo",
+    "min": 50.55,
+    "entrada": 114
+   },
+   "resumen": {
+    "ubicaciones_pendientes": 0,
+    "reclamos_pendientes": 0,
+    "bloqueos_vigentes": 17,
+    "dinamicas": [
+     {
+      "exp": "EXP-2026-000001",
+      "titulo": "pelotaya.test",
+      "sesion": "S048211"
+     },
+     {
+      "exp": "EXP-2026-000002",
+      "titulo": "golazo-libre.test",
+      "sesion": "S077310"
+     },
+     {
+      "exp": "EXP-2026-000003",
+      "titulo": "verpartido-hd.test",
+      "sesion": "S010457"
+     }
+    ],
+    "ordenes_en_espera": 0,
+    "levantamientos_pendientes": []
+   },
+   "entrada": 112,
+   "dinamicas_ratificadas": [
+    "EXP-2026-000001",
+    "EXP-2026-000002",
+    "EXP-2026-000003"
+   ],
+   "dinamicas_sin_ratificar": []
+  }
+ ],
+ "ordenes_sin_ubicacion": [],
+ "cerrado": true,
+ "cabeza_auditoria": {
+  "n": 229,
+  "hash": "d2927dff0f9b849493d9bf9cc6881dbfb99e4d4e0ab931763e79631c774deef7"
+ },
+ "tiempos": {
+  "firmaron": "el juez automático de ensayo (solo pruebas)",
+  "ubicaciones": [
+   {
+    "exp": "EXP-2026-000001",
+    "ubicacion": 1,
+    "host": "s1.pelotaya.test",
+    "tipo": "en_persona",
+    "deteccion_min": 2.0,
+    "firma_min": 2.34,
+    "primer_proveedor_min": 2.752,
+    "todos_los_proveedores_min": 7.873,
+    "expediente_abierto_min": 0.313,
+    "hasta_firma_min": 0.34,
+    "hasta_primer_proveedor_min": 0.752,
+    "hasta_todos_min": 5.873
+   },
+   {
+    "exp": "EXP-2026-000001",
+    "ubicacion": 2,
+    "host": "s2.pelotaya.test",
+    "tipo": "ampliacion",
+    "deteccion_min": 37.5,
+    "firma_min": 37.562,
+    "primer_proveedor_min": 37.961,
+    "todos_los_proveedores_min": 45.541,
+    "expediente_abierto_min": null,
+    "hasta_firma_min": 0.062,
+    "hasta_primer_proveedor_min": 0.461,
+    "hasta_todos_min": 8.041
+   },
+   {
+    "exp": "EXP-2026-000001",
+    "ubicacion": 3,
+    "host": "s3.pelotaya.test",
+    "tipo": "ampliacion",
+    "deteccion_min": 71.0,
+    "firma_min": 71.004,
+    "primer_proveedor_min": 71.401,
+    "todos_los_proveedores_min": 77.362,
+    "expediente_abierto_min": null,
+    "hasta_firma_min": 0.004,
+    "hasta_primer_proveedor_min": 0.401,
+    "hasta_todos_min": 6.362
+   },
+   {
+    "exp": "EXP-2026-000002",
+    "ubicacion": 1,
+    "host": "live.golazo-libre.test",
+    "tipo": "en_persona",
+    "deteccion_min": 6.0,
+    "firma_min": 6.4,
+    "primer_proveedor_min": 7.046,
+    "todos_los_proveedores_min": 11.906,
+    "expediente_abierto_min": 0.319,
+    "hasta_firma_min": 0.4,
+    "hasta_primer_proveedor_min": 1.046,
+    "hasta_todos_min": 5.906
+   },
+   {
+    "exp": "EXP-2026-000003",
+    "ubicacion": 1,
+    "host": "tv.verpartido-hd.test",
+    "tipo": "en_persona",
+    "deteccion_min": 9.0,
+    "firma_min": 9.37,
+    "primer_proveedor_min": 9.99,
+    "todos_los_proveedores_min": 17.167,
+    "expediente_abierto_min": 0.318,
+    "hasta_firma_min": 0.37,
+    "hasta_primer_proveedor_min": 0.99,
+    "hasta_todos_min": 8.167
+   },
+   {
+    "exp": "EXP-2026-000004",
+    "ubicacion": 1,
+    "host": "x9.tribuna-pirata.test",
+    "tipo": "en_persona",
+    "deteccion_min": 55.0,
+    "firma_min": 55.441,
+    "primer_proveedor_min": 55.919,
+    "todos_los_proveedores_min": 61.294,
+    "expediente_abierto_min": 0.327,
+    "hasta_firma_min": 0.441,
+    "hasta_primer_proveedor_min": 0.919,
+    "hasta_todos_min": 6.294
+   },
+   {
+    "exp": "EXP-2026-000004",
+    "ubicacion": 2,
+    "host": "x10.tribuna-pirata.test",
+    "tipo": "ampliacion",
+    "deteccion_min": 82.0,
+    "firma_min": 82.04,
+    "primer_proveedor_min": 82.583,
+    "todos_los_proveedores_min": 89.651,
+    "expediente_abierto_min": null,
+    "hasta_firma_min": 0.04,
+    "hasta_primer_proveedor_min": 0.583,
+    "hasta_todos_min": 7.651
+   }
+  ],
+  "promedios": {
+   "en_persona": {
+    "ubicaciones": 4,
+    "hasta_firma_min": 0.388,
+    "hasta_primer_proveedor_min": 0.927,
+    "hasta_todos_min": 6.56,
+    "sin_todos": 0
+   },
+   "ampliacion": {
+    "ubicaciones": 3,
+    "hasta_firma_min": 0.035,
+    "hasta_primer_proveedor_min": 0.482,
+    "hasta_todos_min": 7.351,
+    "sin_todos": 0
+   }
+  }
+ },
+ "ordenes_marco": [
+  "OM-01",
+  "OM-02"
+ ]
+}

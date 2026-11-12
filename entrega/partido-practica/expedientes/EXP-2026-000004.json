@@ -1,0 +1,1051 @@
+{
+ "id": "EXP-2026-000004",
+ "num": 4,
+ "titulo": "tribuna-pirata.test",
+ "sitio": "tribuna-pirata.test",
+ "creado_min": 55.081,
+ "estado": "cerrado",
+ "filtracion": {
+  "clave": "LP26-PRA-OFI-S063002",
+  "sesion": "S063002",
+  "marcas": [
+   "LP26-PRA-OFI-S063002"
+  ],
+  "prefijo": "LP26-PRA-OFI",
+  "origen": "Señal oficial del titular (plataforma propia)"
+ },
+ "dinamica": {
+  "activa": true,
+  "marcas": [
+   "LP26-PRA-OFI-S063002"
+  ],
+  "orden_marco": {
+   "id": "OM-02",
+   "entrada": 113,
+   "huella": "f8535052acf78f69f65cf94af1de21d8d46ac3434ae4c53aacf07d37f519ff26",
+   "nombre": "Dr. Martín Ejemplo",
+   "min": 50.19
+  },
+  "otorgada_por": {
+   "juez_id": "juez-martin-ejemplo",
+   "nombre": "Dr. Martín Ejemplo"
+  },
+  "otorgada_min": 55.441,
+  "entrada": 121,
+  "respaldada_por": "juez-martin-ejemplo",
+  "requiere_ratificacion": false,
+  "ratificaciones": [],
+  "revocada": null
+ },
+ "corte_en_origen": {
+  "min": 55.081,
+  "sesion": "S063002",
+  "texto": "Constancia de aviso al titular (Liga Profesional Ficticia): la sesión S063002 de su plataforma es la que se está filtrando; cortarla le corresponde al titular. La plataforma no corta nada: deja constancia del aviso. (Simulado: el simulador no tiene esa API.)"
+ },
+ "ubicaciones": [
+  {
+   "n": 1,
+   "ref": "EXP-2026-000004/U1",
+   "estado": "aprobada",
+   "host": "x9.tribuna-pirata.test",
+   "ip": "203.0.113.40",
+   "host_stream": "x9.tribuna-pirata.test",
+   "asn": 64600,
+   "organizacion": "Bruma Hosting Dedicado (ficticio)",
+   "pagina": "https://tribuna-pirata.test/ver",
+   "stream_url": "https://x9.tribuna-pirata.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 55.0,
+   "ultima_deteccion_min": 75.0,
+   "detecciones": [
+    "D-0021",
+    "D-0025",
+    "D-0030"
+   ],
+   "detecciones_min": [
+    55.0,
+    65.0,
+    75.0
+   ],
+   "continuidad": null,
+   "senal": {
+    "marca": "LP26-PRA-OFI-S063002",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S063002",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S063002). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "5e3d43564f3ab28fd6d042ea219ea19c302093798435a7d197b3f64092d6a6e6",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 55.0,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "x9.tribuna-pirata.test"
+    ],
+    "propios": [
+     "x9.tribuna-pirata.test"
+    ],
+    "ajenos": [],
+    "observados": [
+     "x9.tribuna-pirata.test"
+    ],
+    "inferidos": [],
+    "red_compartida": false,
+    "riesgo": "nulo",
+    "recomendacion": "ip",
+    "motivo": "La IP es exclusiva del sitio pirata (x9.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "discord",
+     "url": "https://discord.example/invite/tribuna-vip",
+     "minuto": 53.0
+    },
+    {
+     "red": "telegram",
+     "url": "https://t.example/tribunapirata",
+     "minuto": 54.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "ip",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por IP de 203.0.113.40 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (x9.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.40"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.40"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "x9.tribuna-pirata.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.40"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "ac0930185e8af3855a9c04b5dd6a424c4d9fb15e0b707a3c71db57bb62c76f1f",
+   "armado_min": 55.081,
+   "armado_utc": "2026-11-12T17:32:36.640Z",
+   "asignada_a": "juez-martin-ejemplo",
+   "notificada_min": 55.081,
+   "vista_min": 55.114,
+   "decision": {
+    "tipo": "firma",
+    "aprobada": true,
+    "juez_id": "juez-martin-ejemplo",
+    "juez": "Dr. Martín Ejemplo",
+    "juzgado_id": "jg-norte-1",
+    "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+    "min": 55.441,
+    "utc": "2026-11-12T17:32:37.705Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "f51695f3c08d02d0bbaea17c8927f953",
+    "entrada": 121,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.40 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (x9.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.40"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.40"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "x9.tribuna-pirata.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.40"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": null,
+    "texto": "Firmada por Dr. Martín Ejemplo en el minuto 55,4 (entrada 121)"
+   },
+   "automatica": {
+    "posible": false,
+    "motivo": "es el primer servidor de esta filtración: lo decide el juez."
+   },
+   "operacion": [
+    "tribuna-pirata.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000004",
+    "ubicacion": 1,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0021",
+     "minuto": 55.0,
+     "pagina": "https://tribuna-pirata.test/ver",
+     "stream_url": "https://x9.tribuna-pirata.test/hls/en-vivo/index.m3u8",
+     "host_stream": "x9.tribuna-pirata.test",
+     "ip_servidor": "203.0.113.40",
+     "asn": 64600,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S063002",
+     "captura": {
+      "capturada_min": 55.0,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R8ZHaQHiNtvu3CX0pK1QOi6u3IqdeCtWC5KXH9fBoC+055M8+UR7TajvW7zZMYk64uMzHpA7VzpDRDqGwcP8fQ=="
+     },
+     "promocion": [
+      {
+       "red": "discord",
+       "url": "https://discord.example/invite/tribuna-vip",
+       "minuto": 53.0
+      },
+      {
+       "red": "telegram",
+       "url": "https://t.example/tribunapirata",
+       "minuto": 54.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "5e3d43564f3ab28fd6d042ea219ea19c302093798435a7d197b3f64092d6a6e6",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 55.0,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S063002",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S063002",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S063002). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://tribuna-pirata.test/ver",
+     "stream_url": "https://x9.tribuna-pirata.test/hls/en-vivo/index.m3u8",
+     "host": "x9.tribuna-pirata.test",
+     "ip": "203.0.113.40",
+     "asn": 64600,
+     "organizacion": "Bruma Hosting Dedicado (ficticio)",
+     "host_crudo": "x9.tribuna-pirata.test",
+     "nombres_crudos": {
+      "x9.tribuna-pirata.test": "x9.tribuna-pirata.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "203.0.113.40": {
+       "ip": "203.0.113.40",
+       "asn": 64600,
+       "organizacion": "Bruma Hosting Dedicado (ficticio)",
+       "dominios": [
+        "x9.tribuna-pirata.test"
+       ]
+      }
+     },
+     "por_host": {
+      "x9.tribuna-pirata.test": {
+       "dominio": "x9.tribuna-pirata.test",
+       "ips": [
+        {
+         "ip": "203.0.113.40",
+         "asn": 64600,
+         "organizacion": "Bruma Hosting Dedicado (ficticio)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 55.081
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "x9.tribuna-pirata.test"
+     ],
+     "propios": [
+      "x9.tribuna-pirata.test"
+     ],
+     "ajenos": [],
+     "observados": [
+      "x9.tribuna-pirata.test"
+     ],
+     "inferidos": [],
+     "red_compartida": false,
+     "riesgo": "nulo",
+     "recomendacion": "ip",
+     "motivo": "La IP es exclusiva del sitio pirata (x9.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "discord",
+      "url": "https://discord.example/invite/tribuna-vip",
+      "minuto": 53.0
+     },
+     {
+      "red": "telegram",
+      "url": "https://t.example/tribunapirata",
+      "minuto": 54.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.40 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (x9.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.40"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.40"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "x9.tribuna-pirata.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.40"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": null,
+    "armado": {
+     "min": 55.081,
+     "utc": "2026-11-12T17:32:36.640Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "ord-0004-u1-aurora-01-f51695f3c08d02d0bbaea17c8927f953",
+     "proveedor": "aurora",
+     "tipo": "ip",
+     "objetivo": "203.0.113.40",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 55.44,
+     "recibida_min": 55.441,
+     "aplicada_min": 55.919,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 1,
+     "k": 1,
+     "sello": "f51695f3c08d02d0bbaea17c8927f953",
+     "entrada_sello": 121,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 55.441
+    },
+    {
+     "orden_id": "ord-0004-u1-andina-01-f51695f3c08d02d0bbaea17c8927f953",
+     "proveedor": "andina",
+     "tipo": "ip",
+     "objetivo": "203.0.113.40",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 55.44,
+     "recibida_min": 55.444,
+     "aplicada_min": 56.859,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 1,
+     "k": 1,
+     "sello": "f51695f3c08d02d0bbaea17c8927f953",
+     "entrada_sello": 121,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 55.441
+    },
+    {
+     "orden_id": "ord-0004-u1-valle-01-f51695f3c08d02d0bbaea17c8927f953",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "x9.tribuna-pirata.test",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 55.44,
+     "recibida_min": 55.443,
+     "aplicada_min": 61.294,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 1,
+     "k": 1,
+     "sello": "f51695f3c08d02d0bbaea17c8927f953",
+     "entrada_sello": 121,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 55.441
+    },
+    {
+     "orden_id": "ord-0004-u1-cumbre-01-f51695f3c08d02d0bbaea17c8927f953",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "203.0.113.40",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 55.44,
+     "recibida_min": 55.442,
+     "aplicada_min": 58.466,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 1,
+     "k": 1,
+     "sello": "f51695f3c08d02d0bbaea17c8927f953",
+     "entrada_sello": 121,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 55.441
+    }
+   ],
+   "redetecciones": [
+    "D-0025",
+    "D-0030"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 0.92,
+    "completo_min": 6.29,
+    "visibilidad_residual_pct": 4.9
+   },
+   "ventana": [
+    55.0,
+    82.0
+   ],
+   "tiempos": {
+    "deteccion_min": 55.0,
+    "firma_min": 55.441,
+    "primer_proveedor_min": 55.919,
+    "todos_los_proveedores_min": 61.294,
+    "expediente_abierto_min": 0.327,
+    "tipo": "en_persona"
+   }
+  },
+  {
+   "n": 2,
+   "ref": "EXP-2026-000004/U2",
+   "estado": "aprobada",
+   "host": "x10.tribuna-pirata.test",
+   "ip": "203.0.113.41",
+   "host_stream": "x10.tribuna-pirata.test",
+   "asn": 64600,
+   "organizacion": "Bruma Hosting Dedicado (ficticio)",
+   "pagina": "https://tribuna-pirata.test/ver",
+   "stream_url": "https://x10.tribuna-pirata.test/hls/en-vivo/index.m3u8",
+   "primera_deteccion_min": 82.0,
+   "ultima_deteccion_min": 102.0,
+   "detecciones": [
+    "D-0034",
+    "D-0039",
+    "D-0043"
+   ],
+   "detecciones_min": [
+    82.0,
+    92.0,
+    102.0
+   ],
+   "continuidad": {
+    "de_ubicacion": 1,
+    "criterio": "misma_marca"
+   },
+   "senal": {
+    "marca": "LP26-PRA-OFI-S063002",
+    "prefijo": "LP26-PRA-OFI",
+    "origen": "Señal oficial del titular (plataforma propia)",
+    "sesion": "S063002",
+    "clase": "pirata",
+    "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S063002). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio.",
+    "observaciones": [],
+    "texto_publico": "El detector informó la marca LP26-PRA-OFI. La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+   },
+   "captura": {
+    "sha256": "767fccc3e8c85585c487925e6d3b8f51e3dd4d796d61cebb11fc2b6e9b2828ee",
+    "bytes": 64,
+    "formato": "mpegts",
+    "duracion_seg": 6,
+    "capturada_min": 82.0,
+    "sync_mpegts": true,
+    "repetida": false,
+    "valida": true,
+    "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+   },
+   "coherencia": {
+    "host_en_url": true,
+    "ip_en_dns_del_host": true,
+    "host_en_dns_de_la_ip": true,
+    "asn_coincide": true,
+    "ok": true,
+    "completa": true,
+    "observaciones": []
+   },
+   "colateral": {
+    "dominios_en_ip": [
+     "x10.tribuna-pirata.test"
+    ],
+    "propios": [
+     "x10.tribuna-pirata.test"
+    ],
+    "ajenos": [],
+    "observados": [
+     "x10.tribuna-pirata.test"
+    ],
+    "inferidos": [],
+    "red_compartida": false,
+    "riesgo": "nulo",
+    "recomendacion": "ip",
+    "motivo": "La IP es exclusiva del sitio pirata (x10.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+    "limpia": true
+   },
+   "promocion": [
+    {
+     "red": "discord",
+     "url": "https://discord.example/invite/tribuna-vip",
+     "minuto": 53.0
+    },
+    {
+     "red": "telegram",
+     "url": "https://t.example/tribunapirata",
+     "minuto": 54.0
+    }
+   ],
+   "propuesta": {
+    "tipo": "ip",
+    "vence_min": 105,
+    "fundamento": "Bloqueo por IP de 203.0.113.41 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (x10.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+    "objetivos_por_proveedor": {
+     "aurora": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.41"
+      }
+     ],
+     "andina": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.41"
+      }
+     ],
+     "valle": [
+      {
+       "tipo": "dominio",
+       "objetivo": "x10.tribuna-pirata.test"
+      }
+     ],
+     "cumbre": [
+      {
+       "tipo": "ip",
+       "objetivo": "203.0.113.41"
+      }
+     ]
+    },
+    "sin_cobertura": []
+   },
+   "huella": "c2dabc3f5a225cf3f98d64da190cb2be9d0ddac81b5c8b5e8c52621ac094ce5b",
+   "armado_min": 82.039,
+   "armado_utc": "2026-11-12T17:33:57.515Z",
+   "asignada_a": "juez-martin-ejemplo",
+   "notificada_min": 82.039,
+   "vista_min": null,
+   "decision": {
+    "tipo": "ampliacion_dinamica",
+    "aprobada": true,
+    "juez_id": "juez-martin-ejemplo",
+    "juez": "Dr. Martín Ejemplo",
+    "juzgado_id": "jg-norte-1",
+    "juzgado": "Juzgado de Garantías N.º 1 (ficticio) — Distrito Judicial Norte",
+    "min": 82.04,
+    "utc": "2026-11-12T17:33:57.516Z",
+    "alcance": "filtracion",
+    "forzado": null,
+    "motivo_rechazo": null,
+    "sello": "2bcc9fd0c077ab39be453464c53118fa",
+    "entrada": 172,
+    "ya_cubiertos": [],
+    "propuesta_aplicada": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.41 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (x10.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.41"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.41"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "x10.tribuna-pirata.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.41"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "bajo_orden_de": {
+     "juez_id": "juez-martin-ejemplo",
+     "nombre": "Dr. Martín Ejemplo",
+     "entrada": 121,
+     "min": 55.441,
+     "otorgada_por": {
+      "juez_id": "juez-martin-ejemplo",
+      "nombre": "Dr. Martín Ejemplo",
+      "min": 55.441,
+      "entrada": 121
+     },
+     "ratificada_por": null
+    },
+    "texto": "Ampliación automática del sistema bajo la orden marco OM-02 de Dr. Martín Ejemplo (minuto 50,2) y el seguimiento que otorgó en el minuto 55,4. No se firmó en persona.",
+    "otorgada_por": {
+     "juez_id": "juez-martin-ejemplo",
+     "nombre": "Dr. Martín Ejemplo",
+     "min": 55.441,
+     "entrada": 121
+    },
+    "ratificada_por": null,
+    "orden_marco": {
+     "id": "OM-02",
+     "entrada": 113,
+     "huella": "f8535052acf78f69f65cf94af1de21d8d46ac3434ae4c53aacf07d37f519ff26"
+    }
+   },
+   "automatica": {
+    "posible": true,
+    "motivo": null
+   },
+   "operacion": [
+    "tribuna-pirata.test"
+   ],
+   "sellado": {
+    "version": 1,
+    "expediente": "EXP-2026-000004",
+    "ubicacion": 2,
+    "partido": {
+     "id": "practica-01",
+     "nombre": "Partido de práctica — Club Ficticio del Norte vs. Deportivo Ejemplo",
+     "titular": "Liga Profesional Ficticia",
+     "fin_min": 105,
+     "huella": "c3f5344d4d9d05505e6159c798874c8fa9332c9a5a71eb153e9917421fb92209"
+    },
+    "deteccion": {
+     "id": "D-0034",
+     "minuto": 82.0,
+     "pagina": "https://tribuna-pirata.test/ver",
+     "stream_url": "https://x10.tribuna-pirata.test/hls/en-vivo/index.m3u8",
+     "host_stream": "x10.tribuna-pirata.test",
+     "ip_servidor": "203.0.113.41",
+     "asn": 64600,
+     "marca_de_agua_extraida": "LP26-PRA-OFI-S063002",
+     "captura": {
+      "capturada_min": 82.0,
+      "formato": "mpegts",
+      "duracion_seg": 6,
+      "contenido_b64": "R6VWz/XEpDLRE3L0IVUXZgJLzsy2JgoVxDZb+CmnTa5fue8v5LlzyuzYyUon2CnqfjvSZHfvIE4Qv1a41foqCw=="
+     },
+     "promocion": [
+      {
+       "red": "discord",
+       "url": "https://discord.example/invite/tribuna-vip",
+       "minuto": 53.0
+      },
+      {
+       "red": "telegram",
+       "url": "https://t.example/tribunapirata",
+       "minuto": 54.0
+      }
+     ]
+    },
+    "captura": {
+     "sha256": "767fccc3e8c85585c487925e6d3b8f51e3dd4d796d61cebb11fc2b6e9b2828ee",
+     "bytes": 64,
+     "formato": "mpegts",
+     "duracion_seg": 6,
+     "capturada_min": 82.0,
+     "sync_mpegts": true,
+     "repetida": false,
+     "valida": true,
+     "texto": "El hash prueba que la captura no cambió desde que llegó a la plataforma."
+    },
+    "senal": {
+     "marca": "LP26-PRA-OFI-S063002",
+     "prefijo": "LP26-PRA-OFI",
+     "origen": "Señal oficial del titular (plataforma propia)",
+     "sesion": "S063002",
+     "clase": "pirata",
+     "motivo": "El detector informó la marca LP26-PRA-OFI (sesión S063002). La plataforma comprobó que ese prefijo es de la señal oficial del partido y que no es de un licenciatario en su dominio."
+    },
+    "servidor": {
+     "pagina": "https://tribuna-pirata.test/ver",
+     "stream_url": "https://x10.tribuna-pirata.test/hls/en-vivo/index.m3u8",
+     "host": "x10.tribuna-pirata.test",
+     "ip": "203.0.113.41",
+     "asn": 64600,
+     "organizacion": "Bruma Hosting Dedicado (ficticio)",
+     "host_crudo": "x10.tribuna-pirata.test",
+     "nombres_crudos": {
+      "x10.tribuna-pirata.test": "x10.tribuna-pirata.test"
+     }
+    },
+    "dns_pasivo": {
+     "por_ip": {
+      "203.0.113.41": {
+       "ip": "203.0.113.41",
+       "asn": 64600,
+       "organizacion": "Bruma Hosting Dedicado (ficticio)",
+       "dominios": [
+        "x10.tribuna-pirata.test"
+       ]
+      }
+     },
+     "por_host": {
+      "x10.tribuna-pirata.test": {
+       "dominio": "x10.tribuna-pirata.test",
+       "ips": [
+        {
+         "ip": "203.0.113.41",
+         "asn": 64600,
+         "organizacion": "Bruma Hosting Dedicado (ficticio)"
+        }
+       ]
+      }
+     },
+     "consultado_min": 82.039
+    },
+    "coherencia": {
+     "host_en_url": true,
+     "ip_en_dns_del_host": true,
+     "host_en_dns_de_la_ip": true,
+     "asn_coincide": true,
+     "ok": true,
+     "completa": true,
+     "observaciones": []
+    },
+    "colateral": {
+     "dominios_en_ip": [
+      "x10.tribuna-pirata.test"
+     ],
+     "propios": [
+      "x10.tribuna-pirata.test"
+     ],
+     "ajenos": [],
+     "observados": [
+      "x10.tribuna-pirata.test"
+     ],
+     "inferidos": [],
+     "red_compartida": false,
+     "riesgo": "nulo",
+     "recomendacion": "ip",
+     "motivo": "La IP es exclusiva del sitio pirata (x10.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+     "limpia": true
+    },
+    "promocion": [
+     {
+      "red": "discord",
+      "url": "https://discord.example/invite/tribuna-vip",
+      "minuto": 53.0
+     },
+     {
+      "red": "telegram",
+      "url": "https://t.example/tribunapirata",
+      "minuto": 54.0
+     }
+    ],
+    "propuesta": {
+     "tipo": "ip",
+     "vence_min": 105,
+     "fundamento": "Bloqueo por IP de 203.0.113.41 hasta el minuto 105 (final del partido). A los proveedores que solo bloquean por dominio se les piden los nombres del servidor pirata. La IP es exclusiva del sitio pirata (x10.tribuna-pirata.test). Bloquear la IP no afecta a nadie más.",
+     "objetivos_por_proveedor": {
+      "aurora": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.41"
+       }
+      ],
+      "andina": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.41"
+       }
+      ],
+      "valle": [
+       {
+        "tipo": "dominio",
+        "objetivo": "x10.tribuna-pirata.test"
+       }
+      ],
+      "cumbre": [
+       {
+        "tipo": "ip",
+        "objetivo": "203.0.113.41"
+       }
+      ]
+     },
+     "sin_cobertura": []
+    },
+    "antecedente": {
+     "ubicacion": 1,
+     "huella": "ac0930185e8af3855a9c04b5dd6a424c4d9fb15e0b707a3c71db57bb62c76f1f"
+    },
+    "armado": {
+     "min": 82.039,
+     "utc": "2026-11-12T17:33:57.515Z"
+    }
+   },
+   "ordenes": [
+    {
+     "orden_id": "amp-0004-u2-aurora-01-2bcc9fd0c077ab39be453464c53118fa",
+     "proveedor": "aurora",
+     "tipo": "ip",
+     "objetivo": "203.0.113.41",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 82.04,
+     "recibida_min": 82.045,
+     "aplicada_min": 82.583,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 2,
+     "k": 1,
+     "sello": "2bcc9fd0c077ab39be453464c53118fa",
+     "entrada_sello": 172,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 82.04
+    },
+    {
+     "orden_id": "amp-0004-u2-andina-01-2bcc9fd0c077ab39be453464c53118fa",
+     "proveedor": "andina",
+     "tipo": "ip",
+     "objetivo": "203.0.113.41",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 82.04,
+     "recibida_min": 82.041,
+     "aplicada_min": 84.398,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 2,
+     "k": 1,
+     "sello": "2bcc9fd0c077ab39be453464c53118fa",
+     "entrada_sello": 172,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 82.04
+    },
+    {
+     "orden_id": "amp-0004-u2-valle-01-2bcc9fd0c077ab39be453464c53118fa",
+     "proveedor": "valle",
+     "tipo": "dominio",
+     "objetivo": "x10.tribuna-pirata.test",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 82.04,
+     "recibida_min": 82.043,
+     "aplicada_min": 89.651,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 2,
+     "k": 1,
+     "sello": "2bcc9fd0c077ab39be453464c53118fa",
+     "entrada_sello": 172,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 82.04
+    },
+    {
+     "orden_id": "amp-0004-u2-cumbre-01-2bcc9fd0c077ab39be453464c53118fa",
+     "proveedor": "cumbre",
+     "tipo": "ip",
+     "objetivo": "203.0.113.41",
+     "vence_min": 105,
+     "juez_id": "juez-martin-ejemplo",
+     "juzgado_id": "jg-norte-1",
+     "estado": "vencida",
+     "intento": 1,
+     "origen": "decision",
+     "reemplaza": null,
+     "enviada_min": 82.04,
+     "recibida_min": 82.046,
+     "aplicada_min": 85.024,
+     "finalizada_min": 105.0,
+     "motivo": null,
+     "exp": "EXP-2026-000004",
+     "n": 2,
+     "k": 1,
+     "sello": "2bcc9fd0c077ab39be453464c53118fa",
+     "entrada_sello": 172,
+     "juez_decision": "juez-martin-ejemplo",
+     "reclamo": null,
+     "levantamiento": null,
+     "creada_min": 82.04
+    }
+   ],
+   "redetecciones": [
+    "D-0039",
+    "D-0043"
+   ],
+   "cobertura": {
+    "sin_ventana": false,
+    "clientes_cubiertos_pct": 100.0,
+    "proveedores_aplicados": 4,
+    "proveedores_total": 4,
+    "primer_bloqueo_min": 0.58,
+    "completo_min": 7.65,
+    "visibilidad_residual_pct": 5.3
+   },
+   "ventana": [
+    82.0,
+    105.0
+   ],
+   "tiempos": {
+    "deteccion_min": 82.0,
+    "firma_min": 82.04,
+    "primer_proveedor_min": 82.583,
+    "todos_los_proveedores_min": 89.651,
+    "expediente_abierto_min": null,
+    "tipo": "ampliacion"
+   }
+  }
+ ]
+}
