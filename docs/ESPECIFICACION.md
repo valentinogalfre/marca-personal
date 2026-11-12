@@ -645,7 +645,7 @@ Reglas comunes:
 - Cada pantalla pide su dato (`/api/juez/bandeja`, `/api/sala`, `/api/publico/registro`) y después se queda en `GET /api/cambios?v=<v>`; cuando cambia la versión, vuelve a pedir. Si la conexión falla, reintenta cada 2 segundos y muestra «Sin conexión con la plataforma».
 - El reloj del partido corre solo entre respuestas, con `acelerar`.
 - Todo texto que venga de la API se pone con `textContent`.
-- Tiene que verse bien en un celular de 360 px de ancho y en un proyector de 1920 px. Con tema claro y oscuro.
+- Tiene que verse bien en un celular de 360 px de ancho y en un proyector de 1920 px. Un solo tema oscuro («Estadio de noche»).
 - Los minutos se muestran como «min 37,5» y, si hay `hora`, también como hora de partido.
 
 ### `/juez` — la bandeja del juez (primero el celular)

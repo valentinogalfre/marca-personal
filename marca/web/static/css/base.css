@@ -1,101 +1,89 @@
 /* Marca Personal — base común a todas las pantallas.
-   Dirección: «la planilla y la transmisión».
-     Juez, registro, orden y portada = una planilla oficial: hoja blanca, reglas finas,
-     rotulación DIN, texto en Charter y la tinta violeta de los sellos.
-     Sala = una transmisión de fútbol: marcador de TV, barra de estadísticas y
-     cada filtración dibujada sobre una franja de cancha.
+   Dirección: «Estadio de noche».
+     Un estadio con las luces prendidas: fondo casi negro con el resplandor de los
+     reflectores arriba, paneles de vidrio ahumado, cifras grandes y finas, y un solo
+     color fuerte que dice «aplicado».
    Colores con significado (pocos, y siempre con forma o texto al lado):
-     amarillo de tarjeta = espera una decisión
-     rojo de tarjeta     = alerta, daño colateral
-     verde césped        = bloqueo aplicado
-     violeta de sello    = firma, sello y evidencia
-   Fuentes: solo las del sistema (DIN, Charter, Avenir Next en macOS; Bahnschrift y
-   Cambria en Windows). Ninguna se pide a un servidor de afuera. */
+     lima    = aplicado, bloqueo firme, la acción principal
+     ámbar   = espera una decisión
+     rojo    = alerta, daño colateral
+     violeta = el juez: firma, sello y evidencia
+   Un solo tema, oscuro: en un proyector el negro no encandila y en el celular el texto
+   claro sobre negro tiene contraste de sobra.
+   Fuentes: solo las del sistema (SF Pro en macOS e iOS; Segoe UI en Windows). Ninguna
+   se pide a un servidor de afuera. */
 
 :root {
-  --f-titulo: "DIN Condensed", "Bahnschrift Condensed", "Bahnschrift SemiCondensed", "Roboto Condensed", "Arial Narrow", sans-serif;
-  --f-rotulo: "DIN Alternate", "Bahnschrift", "D-DIN", "Roboto", "Helvetica Neue", sans-serif;
-  --f-texto: Charter, "Bitstream Charter", "Charis SIL", "Sitka Text", Cambria, Georgia, serif;
-  --f-ui: "Avenir Next", "Segoe UI", "Helvetica Neue", "Noto Sans", sans-serif;
+  --f-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI Variable Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --f-mono: ui-monospace, "SF Mono", Menlo, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  /* Nombres de la versión anterior: se mantienen para no romper reglas que los usan. */
+  --f-titulo: var(--f-display);
+  --f-rotulo: var(--f-ui);
+  --f-texto: var(--f-ui);
 
-  /* la planilla (claro) */
-  --papel: #efefeb;
-  --hoja: #ffffff;
-  --hoja-2: #f7f7f4;
-  --banda: #eef4ee;
-  --tinta: #111214;
-  --tinta-2: #393d44;
-  --tinta-3: #5f656e;
-  --regla: #d6dae0;
-  --regla-fuerte: #9ba2ac;
+  /* el estadio */
+  --papel: #06090a;          /* la noche */
+  --hoja: #0d1312;           /* panel macizo (lo que queda fijo o tapa algo) */
+  --hoja-2: #131a19;         /* panel elevado */
+  --banda: rgba(255, 255, 255, .025);
+  --vidrio: linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .02));
+  --borde-vidrio: rgba(255, 255, 255, .085);
+  --brillo: inset 0 1px 0 rgba(255, 255, 255, .06);
+  --sombra: 0 24px 48px -26px rgba(0, 0, 0, .75);
+  --tinta: #eef2ef;
+  --tinta-2: #b9c2bd;
+  --tinta-3: #8a948f;
+  --regla: rgba(255, 255, 255, .08);
+  --regla-fuerte: rgba(255, 255, 255, .16);
 
   /* significado */
-  --violeta: #55278c;
-  --violeta-suave: #f0e9f9;
-  --amarillo: #f5c400;
-  --amarillo-suave: #fff3bf;
-  --amarillo-texto: #634b00;
-  --rojo: #cf1430;
-  --rojo-suave: #fde7ea;
-  --rojo-texto: #a00f24;
-  --verde: #16763a;
-  --verde-suave: #e3f2e7;
-  --verde-texto: #0f5f2c;
-  --gris-estado: #8b919a;
+  --verde: #c8ff2e;
+  --verde-suave: rgba(200, 255, 46, .11);
+  --verde-texto: #d2ff57;
+  --sobre-verde: #0b1206;
+  --amarillo: #ffb020;
+  --amarillo-suave: rgba(255, 176, 32, .12);
+  --amarillo-texto: #ffc45a;
+  --rojo: #ff4d5e;
+  --rojo-suave: rgba(255, 77, 94, .13);
+  --rojo-texto: #ff95a0;
+  --violeta: #9b7bff;
+  --violeta-suave: rgba(155, 123, 255, .13);
+  --violeta-texto: #b8a0ff;
+  --gris-estado: #6f7975;
 
-  --foco: #1f5eff;
-  --rayado-espera: repeating-linear-gradient(-45deg, var(--amarillo) 0 7px, #111214 7px 14px);
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --papel: #0c0d0f;
-    --hoja: #15171a;
-    --hoja-2: #1b1d21;
-    --banda: #181c1a;
-    --tinta: #eceef0;
-    --tinta-2: #c4c8ce;
-    --tinta-3: #969ca5;
-    --regla: #2a2e34;
-    --regla-fuerte: #4b515a;
-
-    --violeta: #c4a8ff;
-    --violeta-suave: #261d38;
-    --amarillo: #f5c400;
-    --amarillo-suave: #362c07;
-    --amarillo-texto: #f6d34a;
-    --rojo: #ff4d61;
-    --rojo-suave: #3a1219;
-    --rojo-texto: #ff9aa6;
-    --verde: #36b866;
-    --verde-suave: #11301c;
-    --verde-texto: #82e0a4;
-    --gris-estado: #8d939c;
-
-    --foco: #86a8ff;
-    color-scheme: dark;
-  }
+  --r-panel: 20px;
+  --r-control: 14px;
+  --foco: #8fb4ff;
+  --rayado-espera: linear-gradient(90deg, transparent, var(--amarillo), transparent);
+  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--papel); }
 body {
   margin: 0; min-height: 100vh;
-  font-family: var(--f-texto); line-height: 1.45;
-  font-kerning: normal; -webkit-font-smoothing: antialiased;
+  font-family: var(--f-ui); line-height: 1.45;
+  font-kerning: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  color: var(--tinta);
+  /* Los reflectores: lima arriba a la izquierda, violeta (el juez) arriba a la derecha. */
+  background:
+    radial-gradient(ellipse 70% 42% at 18% -6%, rgba(200, 255, 46, .1), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 92% -8%, rgba(155, 123, 255, .13), transparent 70%),
+    var(--papel);
+  background-attachment: fixed;
 }
 img, svg { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; color: inherit; }
 h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 [hidden] { display: none !important; }
-a { color: inherit; text-underline-offset: .18em; text-decoration-thickness: 1px; }
-a:hover { text-decoration-thickness: 2px; }
-::selection { background: var(--violeta); color: #fff; }
+a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); }
+a:hover { text-decoration-color: currentColor; }
+::selection { background: var(--verde); color: var(--sobre-verde); }
 
-:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--foco); outline-offset: 3px; border-radius: 6px; }
 
 .solo-lectores {
   position: absolute !important; width: 1px; height: 1px; overflow: hidden;
@@ -104,12 +92,12 @@ a:hover { text-decoration-thickness: 2px; }
 
 .mono { font-family: var(--f-mono); font-variant-ligatures: none; }
 .num { font-variant-numeric: tabular-nums; }
-/* El rótulo de planilla: DIN en mayúsculas, como el nombre impreso de un campo. */
+/* El rótulo: la línea chica que nombra un dato. */
 .rotulo {
-  font: 700 .74rem/1.15 var(--f-rotulo);
-  letter-spacing: .075em;
+  font: 600 .72rem/1.2 var(--f-ui);
+  letter-spacing: .08em;
   text-transform: uppercase;
-  font-synthesis: none;
+  color: var(--tinta-3);
 }
 .cortar { overflow-wrap: anywhere; word-break: break-word; }
 /* Un host o una IP pasa entero a la línea siguiente antes que cortarse en un guion. */
@@ -123,85 +111,90 @@ a:hover { text-decoration-thickness: 2px; }
 /* --- Tarjeta de árbitro: el indicador de estado con forma, color y texto --- */
 .tarjeta {
   display: inline-flex; align-items: center; gap: .5em;
-  font: 700 .78rem/1.1 var(--f-rotulo); letter-spacing: .07em; text-transform: uppercase;
-  font-synthesis: none;
+  font: 600 .74rem/1.1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase;
 }
 .tarjeta::before {
   content: ""; flex: none;
-  width: .72em; height: 1em; border-radius: 1px;
+  width: .66em; height: .92em; border-radius: 2px;
   transform: rotate(9deg);
   background: var(--gris-estado);
-  box-shadow: .08em .08em 0 rgba(0, 0, 0, .18);
 }
-.tarjeta--amarilla::before { background: var(--amarillo); }
-.tarjeta--roja::before { background: var(--rojo); }
-.tarjeta--verde::before { background: var(--verde); border-radius: 50%; width: .82em; height: .82em; transform: none; box-shadow: none; }
+.tarjeta--amarilla::before { background: var(--amarillo); box-shadow: 0 0 10px rgba(255, 176, 32, .55); }
+.tarjeta--roja::before { background: var(--rojo); box-shadow: 0 0 10px rgba(255, 77, 94, .55); }
+.tarjeta--verde::before { background: var(--verde); border-radius: 50%; width: .7em; height: .7em; transform: none; box-shadow: 0 0 0 3px rgba(200, 255, 46, .16), 0 0 12px rgba(200, 255, 46, .6); }
 .tarjeta--amarilla { color: var(--amarillo-texto); }
 .tarjeta--roja { color: var(--rojo-texto); }
 .tarjeta--verde { color: var(--verde-texto); }
 .tarjeta--gris { color: var(--tinta-3); }
 
-/* --- Estado: un sello rectangular. Se rellena solo lo que pide atención. --- */
+/* --- Estado: una píldora. Se rellena solo lo que pide atención. --- */
 .estado {
-  display: inline-flex; align-items: center; gap: .38em;
-  padding: .26em .5em .16em;
-  font: 700 .76rem/1.1 var(--f-rotulo); letter-spacing: .06em; text-transform: uppercase;
-  font-synthesis: none; white-space: nowrap;
-  border: 1.5px solid currentColor;
+  display: inline-flex; align-items: center; gap: .4em;
+  padding: .36em .78em;
+  border-radius: 999px;
+  font: 700 .7rem/1.1 var(--f-ui); letter-spacing: .08em; text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--tinta-2);
+  box-shadow: inset 0 0 0 1px var(--regla-fuerte);
 }
-.estado--ok { color: var(--verde-texto); }
-.estado--espera { color: #1a1500; background: var(--amarillo); border-color: var(--amarillo); }
-.estado--alerta { color: #fff; background: var(--rojo); border-color: var(--rojo); }
-.estado--neutro { color: var(--tinta-3); border-style: dashed; }
+.estado--ok { color: var(--verde-texto); background: var(--verde-suave); box-shadow: inset 0 0 0 1px rgba(200, 255, 46, .3); }
+.estado--espera { color: var(--amarillo-texto); background: var(--amarillo-suave); box-shadow: inset 0 0 0 1px rgba(255, 176, 32, .4); }
+.estado--alerta { color: #fff; background: var(--rojo); box-shadow: 0 0 18px -4px rgba(255, 77, 94, .7); }
+.estado--neutro { color: var(--tinta-3); background: transparent; box-shadow: none; outline: 1px dashed var(--regla-fuerte); outline-offset: -1px; }
 
-/* --- Botones: rectangulares, en DIN, como las casillas de una planilla --- */
+/* --- Botones --- */
 .boton {
   display: inline-flex; align-items: center; justify-content: center; gap: .55em;
-  min-height: 48px; padding: .7em 1.15em .58em;
-  border: 2px solid var(--tinta); border-radius: 0;
-  background: transparent; color: var(--tinta);
-  font: 700 1rem/1.15 var(--f-rotulo); letter-spacing: .02em; font-synthesis: none;
+  min-height: 48px; padding: .7em 1.2em;
+  border: 0; border-radius: var(--r-control);
+  background: rgba(255, 255, 255, .045); color: var(--tinta);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12);
+  font: 600 1rem/1.15 var(--f-ui); letter-spacing: -.005em;
   cursor: pointer; text-decoration: none; text-align: center;
-  transition: transform .08s ease, background-color .15s ease, color .15s ease;
+  transition: transform .08s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease;
   touch-action: manipulation;
 }
-.boton:hover { background: color-mix(in srgb, var(--tinta) 8%, transparent); }
-.boton:active { transform: translateY(1px); }
-.boton[disabled], .boton[aria-disabled="true"] { opacity: .42; cursor: not-allowed; transform: none; }
-.boton--principal { background: var(--tinta); color: var(--hoja); }
-.boton--principal:hover { background: color-mix(in srgb, var(--tinta) 84%, var(--hoja)); }
-.boton--peligro { border-color: var(--rojo); color: var(--rojo-texto); }
+.boton:hover { background: rgba(255, 255, 255, .08); }
+.boton:active { transform: scale(.985); }
+.boton[disabled], .boton[aria-disabled="true"] { opacity: .4; cursor: not-allowed; transform: none; }
+.boton--principal { background: var(--verde); color: var(--sobre-verde); box-shadow: 0 12px 28px -12px rgba(200, 255, 46, .6); font-weight: 700; }
+.boton--principal:hover { background: #d6ff63; }
+.boton--peligro { color: var(--rojo-texto); box-shadow: inset 0 0 0 1px rgba(255, 77, 94, .45); }
 .boton--peligro:hover { background: var(--rojo-suave); }
-.boton--chico { min-height: 44px; padding: .5em .9em .4em; font-size: .9rem; }
+.boton--chico { min-height: 44px; padding: .5em .95em; font-size: .92rem; border-radius: 12px; }
 .boton--ancho { width: 100%; }
+.boton .icono { width: 22px; height: 22px; flex: none; }
 
-/* --- Campos: la línea de la planilla donde se escribe --- */
-.campo { display: grid; gap: .35rem; }
+/* --- Campos --- */
+.campo { display: grid; gap: .4rem; }
 .campo > label, .campo > .rotulo { color: var(--tinta-2); }
 .entrada {
-  width: 100%; min-height: 48px; padding: .62em .75em .5em;
-  border: 1px solid var(--regla-fuerte); border-bottom: 2px solid var(--tinta); border-radius: 0;
-  background: var(--hoja); color: var(--tinta);
-  font-family: var(--f-texto); font-size: 1rem;
+  width: 100%; min-height: 48px; padding: .7em .9em;
+  border: 1px solid rgba(255, 255, 255, .12); border-radius: 12px;
+  background: rgba(255, 255, 255, .04); color: var(--tinta);
+  font-family: var(--f-ui); font-size: 1rem;
+  transition: border-color .15s, background-color .15s;
 }
-.entrada::placeholder { color: var(--tinta-3); opacity: .8; }
-.entrada:focus-visible { border-color: var(--foco); outline-offset: 0; }
-textarea.entrada { min-height: 88px; resize: vertical; line-height: 1.4; }
+.entrada:hover { border-color: rgba(255, 255, 255, .2); }
+.entrada::placeholder { color: var(--tinta-3); opacity: .85; }
+.entrada:focus-visible { border-color: var(--verde); background: rgba(255, 255, 255, .06); outline: 3px solid rgba(200, 255, 46, .18); outline-offset: 0; border-radius: 12px; }
+textarea.entrada { min-height: 92px; resize: vertical; line-height: 1.45; }
 .ayuda { font-size: .86rem; color: var(--tinta-3); }
-.error-campo { font: 700 .92rem/1.3 var(--f-rotulo); color: var(--rojo-texto); }
+.error-campo { font: 600 .92rem/1.35 var(--f-ui); color: var(--rojo-texto); }
 
 /* --- Conexión con la plataforma --- */
 .conexion {
   position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 50;
   transform: translateX(-50%);
-  display: flex; align-items: center; gap: .6em;
+  display: flex; align-items: center; gap: .65em;
   max-width: calc(100vw - 32px);
-  padding: .8em 1.1em .7em;
-  background: var(--rojo); color: #fff;
-  font: 700 .95rem/1.25 var(--f-rotulo); letter-spacing: .02em;
-  box-shadow: 0 0 0 3px #fff, 0 14px 30px -12px rgba(0, 0, 0, .55);
+  padding: .75em 1.2em .75em .8em;
+  border-radius: 999px;
+  background: #2a0c11; color: #ffd9dd;
+  box-shadow: inset 0 0 0 1px rgba(255, 77, 94, .55), 0 18px 40px -14px rgba(0, 0, 0, .8), 0 0 30px -8px rgba(255, 77, 94, .45);
+  font: 600 .95rem/1.25 var(--f-ui);
 }
-.conexion::before { content: "!"; display: grid; place-items: center; width: 1.4em; height: 1.4em; background: #fff; color: var(--rojo); font-weight: 800; flex: none; }
+.conexion::before { content: "!"; display: grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%; background: var(--rojo); color: #fff; font-weight: 800; flex: none; }
 
 /* --- Avisos flotantes (resultado de una acción) --- */
 .flotantes {
@@ -210,50 +203,53 @@ textarea.entrada { min-height: 88px; resize: vertical; line-height: 1.4; }
 }
 /* El aviso informa: los toques pasan a lo que hay debajo (no tapa botones de acción). */
 .flotante {
-  position: relative;
+  position: relative; overflow: hidden;
   pointer-events: none;
-  padding: 1em 1.1em .85em;
-  background: var(--tinta); color: var(--hoja);
-  font: 700 .98rem/1.3 var(--f-rotulo); letter-spacing: .01em;
-  box-shadow: 0 16px 34px -14px rgba(0, 0, 0, .6);
+  padding: 1em 1.15em 1em 2.6em;
+  border-radius: 16px;
+  background: rgba(16, 22, 21, .92); color: var(--tinta);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: inset 0 0 0 1px var(--borde-vidrio), 0 20px 40px -16px rgba(0, 0, 0, .8);
+  font: 600 .98rem/1.35 var(--f-ui);
   animation: entrar-flotante .25s ease-out both;
 }
-.flotante::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--verde); }
-.flotante--alerta::before { background: var(--rojo); }
-.flotante--espera::before { background: var(--rayado-espera); }
-@keyframes entrar-flotante { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
-
-/* --- El sello: la firma atada a la evidencia, en tinta violeta de sello de goma --- */
-.sello {
-  --c: var(--violeta);
-  display: inline-grid; justify-items: center; gap: .2rem;
-  padding: .6rem .85rem .5rem; min-width: 11.5rem;
-  color: var(--c);
-  border: 3px solid var(--c);
-  outline: 1.5px solid var(--c); outline-offset: 3px;
-  transform: rotate(-3.5deg);
-  text-align: center;
-  mix-blend-mode: multiply;
-  /* Tinta despareja: el sello «muerde» el papel. */
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3.4 0 0 0 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3.4 0 0 0 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");
+.flotante::before {
+  content: ""; position: absolute; left: 1.05em; top: 1.32em; width: .62em; height: .62em; border-radius: 50%;
+  background: var(--verde); box-shadow: 0 0 12px var(--verde);
 }
-@media (prefers-color-scheme: dark) { .sello { mix-blend-mode: screen; } }
-.sello__titulo { font: 700 1.05rem/1 var(--f-titulo); letter-spacing: .3em; text-transform: uppercase; padding-left: .3em; font-synthesis: none; }
-.sello__codigo { display: grid; font: 700 .8rem/1.3 var(--f-mono); letter-spacing: .05em; }
-.sello__pie { font: 700 .66rem/1.2 var(--f-rotulo); letter-spacing: .12em; text-transform: uppercase; }
-.sello--rechazo { --c: var(--rojo-texto); }
-.sello--nuevo { animation: estampar .55s cubic-bezier(.2, 1.4, .4, 1) both; }
+.flotante--alerta::before { background: var(--rojo); box-shadow: 0 0 12px var(--rojo); }
+.flotante--espera::before { background: var(--amarillo); box-shadow: 0 0 12px var(--amarillo); }
+@keyframes entrar-flotante { from { opacity: 0; transform: translateY(-8px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* --- El sello: la firma del juez atada a la evidencia. Violeta, con su resplandor. --- */
+.sello {
+  --c: var(--violeta-texto);
+  --c-fondo: var(--violeta-suave);
+  --c-luz: rgba(155, 123, 255, .45);
+  display: inline-grid; justify-items: center; gap: .25rem;
+  padding: .7rem 1rem .6rem; min-width: 11.5rem;
+  border-radius: 16px;
+  color: var(--c);
+  background: var(--c-fondo);
+  box-shadow: inset 0 0 0 1.5px var(--c), inset 0 0 0 5px var(--c-fondo), inset 0 0 0 6px color-mix(in srgb, var(--c) 45%, transparent), 0 0 34px -6px var(--c-luz);
+  transform: rotate(-2.5deg);
+  text-align: center;
+}
+.sello__titulo { font: 800 1rem/1 var(--f-display); letter-spacing: .32em; text-transform: uppercase; padding-left: .32em; }
+.sello__codigo { display: grid; font: 600 .8rem/1.3 var(--f-mono); letter-spacing: .04em; color: var(--tinta); }
+.sello__pie { font: 600 .64rem/1.2 var(--f-ui); letter-spacing: .12em; text-transform: uppercase; }
+.sello--rechazo { --c: var(--rojo-texto); --c-fondo: var(--rojo-suave); --c-luz: rgba(255, 77, 94, .4); }
+.sello--nuevo { animation: estampar .6s cubic-bezier(.2, 1.4, .4, 1) both; }
 @keyframes estampar {
-  0% { opacity: 0; transform: rotate(-12deg) scale(1.9); }
-  60% { opacity: 1; transform: rotate(-2.5deg) scale(.96); }
-  100% { opacity: 1; transform: rotate(-3.5deg) scale(1); }
+  0% { opacity: 0; transform: rotate(-10deg) scale(1.7); filter: blur(4px); }
+  60% { opacity: 1; transform: rotate(-1.5deg) scale(.97); filter: none; }
+  100% { opacity: 1; transform: rotate(-2.5deg) scale(1); }
 }
 
 /* --- Marca (logo) --- */
 .logo { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; }
-.logo svg { width: 28px; height: 28px; flex: none; }
-.logo__texto { font: 700 .86rem/1 var(--f-rotulo); letter-spacing: .2em; text-transform: uppercase; padding-top: .12em; font-synthesis: none; }
+.logo svg { width: 28px; height: 28px; flex: none; color: var(--verde); filter: drop-shadow(0 0 8px rgba(200, 255, 46, .45)); }
+.logo__texto { font: 650 1rem/1 var(--f-display); letter-spacing: -.015em; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition: none !important; scroll-behavior: auto !important; }
