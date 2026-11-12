@@ -1,171 +1,194 @@
 /* Marca Personal — base común a todas las pantallas.
-   Colores con significado (pocos):
+   Dirección: «la planilla y la transmisión».
+     Juez, registro, orden y portada = una planilla oficial: hoja blanca, reglas finas,
+     rotulación DIN, texto en Charter y la tinta violeta de los sellos.
+     Sala = una transmisión de fútbol: marcador de TV, barra de estadísticas y
+     cada filtración dibujada sobre una franja de cancha.
+   Colores con significado (pocos, y siempre con forma o texto al lado):
      amarillo de tarjeta = espera una decisión
      rojo de tarjeta     = alerta, daño colateral
      verde césped        = bloqueo aplicado
-   Todo lo demás es tinta y papel (juez, público) o tiza y pizarra (sala). */
+     violeta de sello    = firma, sello y evidencia
+   Fuentes: solo las del sistema (DIN, Charter, Avenir Next en macOS; Bahnschrift y
+   Cambria en Windows). Ninguna se pide a un servidor de afuera. */
 
 :root {
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "URW Palladio L", "Noto Serif", Georgia, serif;
-  --sans: "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", Roboto, "Noto Sans", Arial, sans-serif;
-  --cond: "Avenir Next Condensed", "DIN Condensed", "DIN Alternate", "Bahnschrift SemiCondensed", Bahnschrift, "Roboto Condensed", "Arial Narrow", sans-serif;
-  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, "Roboto Mono", "Liberation Mono", monospace;
+  --f-titulo: "DIN Condensed", "Bahnschrift Condensed", "Bahnschrift SemiCondensed", "Roboto Condensed", "Arial Narrow", sans-serif;
+  --f-rotulo: "DIN Alternate", "Bahnschrift", "D-DIN", "Roboto", "Helvetica Neue", sans-serif;
+  --f-texto: Charter, "Bitstream Charter", "Charis SIL", "Sitka Text", Cambria, Georgia, serif;
+  --f-ui: "Avenir Next", "Segoe UI", "Helvetica Neue", "Noto Sans", sans-serif;
+  --f-mono: ui-monospace, "SF Mono", Menlo, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
 
-  /* papel y tinta (claro) */
-  --papel: #f3eee3;
-  --papel-hondo: #e9e2d2;
-  --hoja: #fbf8f1;
-  --tinta: #1c1b18;
-  --tinta-2: #48443c;
-  --tinta-3: #635d52;
-  --regla: #d6cdb9;
-  --regla-fuerte: #b9ae96;
-  --sello: #24317a;
+  /* la planilla (claro) */
+  --papel: #efefeb;
+  --hoja: #ffffff;
+  --hoja-2: #f7f7f4;
+  --banda: #eef4ee;
+  --tinta: #111214;
+  --tinta-2: #393d44;
+  --tinta-3: #5f656e;
+  --regla: #d6dae0;
+  --regla-fuerte: #9ba2ac;
 
   /* significado */
-  --amarillo: #f2c200;
-  --amarillo-suave: #fbefb8;
-  --amarillo-texto: #6e5300;
-  --rojo: #c8102e;
-  --rojo-suave: #f8dcdc;
-  --rojo-texto: #9f0c24;
-  --verde: #1f7a3a;
-  --verde-suave: #d7ead9;
-  --verde-texto: #155f2b;
-  --gris-estado: #8a8476;
+  --violeta: #55278c;
+  --violeta-suave: #f0e9f9;
+  --amarillo: #f5c400;
+  --amarillo-suave: #fff3bf;
+  --amarillo-texto: #634b00;
+  --rojo: #cf1430;
+  --rojo-suave: #fde7ea;
+  --rojo-texto: #a00f24;
+  --verde: #16763a;
+  --verde-suave: #e3f2e7;
+  --verde-texto: #0f5f2c;
+  --gris-estado: #8b919a;
 
-  --foco: #1d4ed8;
-  --radio: 6px;
-  --sombra: 0 1px 0 rgba(28, 27, 24, .05), 0 6px 18px -10px rgba(28, 27, 24, .25);
+  --foco: #1f5eff;
+  --rayado-espera: repeating-linear-gradient(-45deg, var(--amarillo) 0 7px, #111214 7px 14px);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --papel: #14130f;
-    --papel-hondo: #0f0e0b;
-    --hoja: #1d1b16;
-    --tinta: #efe9db;
-    --tinta-2: #c9c1b0;
-    --tinta-3: #a59d8c;
-    --regla: #39352c;
-    --regla-fuerte: #555043;
-    --sello: #a9b8ff;
+    --papel: #0c0d0f;
+    --hoja: #15171a;
+    --hoja-2: #1b1d21;
+    --banda: #181c1a;
+    --tinta: #eceef0;
+    --tinta-2: #c4c8ce;
+    --tinta-3: #969ca5;
+    --regla: #2a2e34;
+    --regla-fuerte: #4b515a;
 
-    --amarillo: #f2c200;
-    --amarillo-suave: #3a3110;
-    --amarillo-texto: #f5cf4a;
-    --rojo: #e5484d;
-    --rojo-suave: #3d1517;
-    --rojo-texto: #ff8a8e;
-    --verde: #3aa457;
-    --verde-suave: #14301c;
-    --verde-texto: #74d48c;
-    --gris-estado: #8f887a;
+    --violeta: #c4a8ff;
+    --violeta-suave: #261d38;
+    --amarillo: #f5c400;
+    --amarillo-suave: #362c07;
+    --amarillo-texto: #f6d34a;
+    --rojo: #ff4d61;
+    --rojo-suave: #3a1219;
+    --rojo-texto: #ff9aa6;
+    --verde: #36b866;
+    --verde-suave: #11301c;
+    --verde-texto: #82e0a4;
+    --gris-estado: #8d939c;
 
-    --foco: #8fb3ff;
-    --sombra: 0 1px 0 rgba(0, 0, 0, .3), 0 8px 24px -12px rgba(0, 0, 0, .7);
+    --foco: #86a8ff;
     color-scheme: dark;
   }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-body { margin: 0; min-height: 100vh; font-family: var(--sans); line-height: 1.45; }
+body {
+  margin: 0; min-height: 100vh;
+  font-family: var(--f-texto); line-height: 1.45;
+  font-kerning: normal; -webkit-font-smoothing: antialiased;
+}
 img, svg { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; color: inherit; }
 h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 [hidden] { display: none !important; }
-a { color: inherit; }
+a { color: inherit; text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+::selection { background: var(--violeta); color: #fff; }
 
-:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; border-radius: 3px; }
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
 
 .solo-lectores {
   position: absolute !important; width: 1px; height: 1px; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
 }
 
-.mono { font-family: var(--mono); font-variant-ligatures: none; }
+.mono { font-family: var(--f-mono); font-variant-ligatures: none; }
 .num { font-variant-numeric: tabular-nums; }
+/* El rótulo de planilla: DIN en mayúsculas, como el nombre impreso de un campo. */
 .rotulo {
-  font: 650 .72rem/1.2 var(--sans);
-  letter-spacing: .11em;
+  font: 700 .74rem/1.15 var(--f-rotulo);
+  letter-spacing: .075em;
   text-transform: uppercase;
+  font-synthesis: none;
 }
 .cortar { overflow-wrap: anywhere; word-break: break-word; }
 /* Un host o una IP pasa entero a la línea siguiente antes que cortarse en un guion. */
 .mono.cortar { display: inline-block; max-width: 100%; }
 
 /* --- Hash en grupos de cuatro: se lee, y al copiarlo sale entero --- */
-.hash { font-family: var(--mono); font-size: .86em; letter-spacing: .02em; overflow-wrap: anywhere; }
+.hash { font-family: var(--f-mono); font-size: .86em; letter-spacing: .02em; overflow-wrap: anywhere; }
 .hash > span { display: inline-block; margin-right: .38em; }
 .hash > span:last-child { margin-right: 0; }
 
 /* --- Tarjeta de árbitro: el indicador de estado con forma, color y texto --- */
 .tarjeta {
   display: inline-flex; align-items: center; gap: .5em;
-  font: 700 .74rem/1.1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+  font: 700 .78rem/1.1 var(--f-rotulo); letter-spacing: .07em; text-transform: uppercase;
+  font-synthesis: none;
 }
 .tarjeta::before {
   content: ""; flex: none;
-  width: .78em; height: 1.05em; border-radius: 2px;
-  transform: rotate(8deg);
+  width: .72em; height: 1em; border-radius: 1px;
+  transform: rotate(9deg);
   background: var(--gris-estado);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+  box-shadow: .08em .08em 0 rgba(0, 0, 0, .18);
 }
 .tarjeta--amarilla::before { background: var(--amarillo); }
 .tarjeta--roja::before { background: var(--rojo); }
-.tarjeta--verde::before { background: var(--verde); border-radius: 50%; width: .9em; height: .9em; transform: none; }
+.tarjeta--verde::before { background: var(--verde); border-radius: 50%; width: .82em; height: .82em; transform: none; box-shadow: none; }
 .tarjeta--amarilla { color: var(--amarillo-texto); }
 .tarjeta--roja { color: var(--rojo-texto); }
 .tarjeta--verde { color: var(--verde-texto); }
 .tarjeta--gris { color: var(--tinta-3); }
 
-/* --- Píldora de estado (texto + ícono, nunca solo color) --- */
+/* --- Estado: un sello rectangular. Se rellena solo lo que pide atención. --- */
 .estado {
-  display: inline-flex; align-items: center; gap: .35em;
-  padding: .12em .55em .14em; border-radius: 999px;
-  font: 650 .78rem/1.3 var(--sans); white-space: nowrap;
-  border: 1px solid currentColor;
+  display: inline-flex; align-items: center; gap: .38em;
+  padding: .26em .5em .16em;
+  font: 700 .76rem/1.1 var(--f-rotulo); letter-spacing: .06em; text-transform: uppercase;
+  font-synthesis: none; white-space: nowrap;
+  border: 1.5px solid currentColor;
 }
-.estado--ok { color: var(--verde-texto); background: var(--verde-suave); border-color: transparent; }
-.estado--espera { color: var(--amarillo-texto); background: var(--amarillo-suave); border-color: transparent; }
-.estado--alerta { color: var(--rojo-texto); background: var(--rojo-suave); border-color: transparent; }
-.estado--neutro { color: var(--tinta-3); }
+.estado--ok { color: var(--verde-texto); }
+.estado--espera { color: #1a1500; background: var(--amarillo); border-color: var(--amarillo); }
+.estado--alerta { color: #fff; background: var(--rojo); border-color: var(--rojo); }
+.estado--neutro { color: var(--tinta-3); border-style: dashed; }
 
-/* --- Botones --- */
+/* --- Botones: rectangulares, en DIN, como las casillas de una planilla --- */
 .boton {
   display: inline-flex; align-items: center; justify-content: center; gap: .55em;
-  min-height: 48px; padding: .65em 1.15em;
-  border-radius: var(--radio); border: 2px solid var(--tinta);
+  min-height: 48px; padding: .7em 1.15em .58em;
+  border: 2px solid var(--tinta); border-radius: 0;
   background: transparent; color: var(--tinta);
-  font: 650 1rem/1.15 var(--sans); letter-spacing: .01em;
+  font: 700 1rem/1.15 var(--f-rotulo); letter-spacing: .02em; font-synthesis: none;
   cursor: pointer; text-decoration: none; text-align: center;
-  transition: transform .08s ease, background-color .15s ease, box-shadow .15s ease;
+  transition: transform .08s ease, background-color .15s ease, color .15s ease;
   touch-action: manipulation;
 }
-.boton:hover { background: color-mix(in srgb, var(--tinta) 7%, transparent); }
+.boton:hover { background: color-mix(in srgb, var(--tinta) 8%, transparent); }
 .boton:active { transform: translateY(1px); }
-.boton[disabled], .boton[aria-disabled="true"] { opacity: .45; cursor: not-allowed; transform: none; }
-.boton--principal { background: var(--tinta); color: var(--papel); }
-.boton--principal:hover { background: color-mix(in srgb, var(--tinta) 88%, var(--papel)); }
+.boton[disabled], .boton[aria-disabled="true"] { opacity: .42; cursor: not-allowed; transform: none; }
+.boton--principal { background: var(--tinta); color: var(--hoja); }
+.boton--principal:hover { background: color-mix(in srgb, var(--tinta) 84%, var(--hoja)); }
 .boton--peligro { border-color: var(--rojo); color: var(--rojo-texto); }
-.boton--chico { min-height: 44px; padding: .45em .9em; font-size: .92rem; }
+.boton--peligro:hover { background: var(--rojo-suave); }
+.boton--chico { min-height: 44px; padding: .5em .9em .4em; font-size: .9rem; }
 .boton--ancho { width: 100%; }
 
-/* --- Campos --- */
+/* --- Campos: la línea de la planilla donde se escribe --- */
 .campo { display: grid; gap: .35rem; }
 .campo > label, .campo > .rotulo { color: var(--tinta-2); }
 .entrada {
-  width: 100%; min-height: 48px; padding: .6em .75em;
-  border: 2px solid var(--regla-fuerte); border-radius: var(--radio);
+  width: 100%; min-height: 48px; padding: .62em .75em .5em;
+  border: 1px solid var(--regla-fuerte); border-bottom: 2px solid var(--tinta); border-radius: 0;
   background: var(--hoja); color: var(--tinta);
+  font-family: var(--f-texto); font-size: 1rem;
 }
+.entrada::placeholder { color: var(--tinta-3); opacity: .8; }
 .entrada:focus-visible { border-color: var(--foco); outline-offset: 0; }
 textarea.entrada { min-height: 88px; resize: vertical; line-height: 1.4; }
-.ayuda { font-size: .85rem; color: var(--tinta-3); }
-.error-campo { font-size: .9rem; font-weight: 600; color: var(--rojo-texto); }
+.ayuda { font-size: .86rem; color: var(--tinta-3); }
+.error-campo { font: 700 .92rem/1.3 var(--f-rotulo); color: var(--rojo-texto); }
 
 /* --- Conexión con la plataforma --- */
 .conexion {
@@ -173,12 +196,12 @@ textarea.entrada { min-height: 88px; resize: vertical; line-height: 1.4; }
   transform: translateX(-50%);
   display: flex; align-items: center; gap: .6em;
   max-width: calc(100vw - 32px);
-  padding: .7em 1em; border-radius: var(--radio);
+  padding: .8em 1.1em .7em;
   background: var(--rojo); color: #fff;
-  font: 650 .95rem/1.25 var(--sans);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .5);
+  font: 700 .95rem/1.25 var(--f-rotulo); letter-spacing: .02em;
+  box-shadow: 0 0 0 3px #fff, 0 14px 30px -12px rgba(0, 0, 0, .55);
 }
-.conexion::before { content: "!"; display: grid; place-items: center; width: 1.4em; height: 1.4em; border-radius: 50%; background: #fff; color: var(--rojo); font-weight: 800; flex: none; }
+.conexion::before { content: "!"; display: grid; place-items: center; width: 1.4em; height: 1.4em; background: #fff; color: var(--rojo); font-weight: 800; flex: none; }
 
 /* --- Avisos flotantes (resultado de una acción) --- */
 .flotantes {
@@ -187,49 +210,50 @@ textarea.entrada { min-height: 88px; resize: vertical; line-height: 1.4; }
 }
 /* El aviso informa: los toques pasan a lo que hay debajo (no tapa botones de acción). */
 .flotante {
+  position: relative;
   pointer-events: none;
-  padding: .75em 1em; border-radius: var(--radio);
-  background: var(--tinta); color: var(--papel);
-  font: 600 .95rem/1.35 var(--sans);
-  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, .55);
-  border-left: 6px solid var(--verde);
+  padding: 1em 1.1em .85em;
+  background: var(--tinta); color: var(--hoja);
+  font: 700 .98rem/1.3 var(--f-rotulo); letter-spacing: .01em;
+  box-shadow: 0 16px 34px -14px rgba(0, 0, 0, .6);
   animation: entrar-flotante .25s ease-out both;
 }
-.flotante--alerta { border-left-color: var(--rojo); }
-.flotante--espera { border-left-color: var(--amarillo); }
+.flotante::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: var(--verde); }
+.flotante--alerta::before { background: var(--rojo); }
+.flotante--espera::before { background: var(--rayado-espera); }
 @keyframes entrar-flotante { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
 
-/* --- El sello: la firma atada a la evidencia, como sello de goma --- */
+/* --- El sello: la firma atada a la evidencia, en tinta violeta de sello de goma --- */
 .sello {
-  --c: var(--sello);
-  display: inline-grid; justify-items: center; gap: .15rem;
-  padding: .55rem .8rem .5rem; min-width: 11.5rem;
+  --c: var(--violeta);
+  display: inline-grid; justify-items: center; gap: .2rem;
+  padding: .6rem .85rem .5rem; min-width: 11.5rem;
   color: var(--c);
-  border: 3px double var(--c); border-radius: 8px;
+  border: 3px solid var(--c);
   outline: 1.5px solid var(--c); outline-offset: 3px;
-  transform: rotate(-4deg);
-  background:
-    radial-gradient(circle at 20% 30%, transparent 0 60%, color-mix(in srgb, var(--c) 5%, transparent) 61%),
-    transparent;
+  transform: rotate(-3.5deg);
   text-align: center;
   mix-blend-mode: multiply;
+  /* Tinta despareja: el sello «muerde» el papel. */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3.4 0 0 0 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3.4 0 0 0 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: dark) { .sello { mix-blend-mode: screen; } }
-.sello__titulo { font: 800 .9rem/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; padding-left: .32em; }
-.sello__codigo { display: grid; font: 700 .82rem/1.25 var(--mono); letter-spacing: .06em; }
-.sello__pie { font: 600 .66rem/1.2 var(--sans); letter-spacing: .1em; text-transform: uppercase; opacity: .9; }
+.sello__titulo { font: 700 1.05rem/1 var(--f-titulo); letter-spacing: .3em; text-transform: uppercase; padding-left: .3em; font-synthesis: none; }
+.sello__codigo { display: grid; font: 700 .8rem/1.3 var(--f-mono); letter-spacing: .05em; }
+.sello__pie { font: 700 .66rem/1.2 var(--f-rotulo); letter-spacing: .12em; text-transform: uppercase; }
 .sello--rechazo { --c: var(--rojo-texto); }
 .sello--nuevo { animation: estampar .55s cubic-bezier(.2, 1.4, .4, 1) both; }
 @keyframes estampar {
   0% { opacity: 0; transform: rotate(-12deg) scale(1.9); }
-  60% { opacity: 1; transform: rotate(-3deg) scale(.96); }
-  100% { opacity: 1; transform: rotate(-4deg) scale(1); }
+  60% { opacity: 1; transform: rotate(-2.5deg) scale(.96); }
+  100% { opacity: 1; transform: rotate(-3.5deg) scale(1); }
 }
 
 /* --- Marca (logo) --- */
-.logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
+.logo { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; }
 .logo svg { width: 28px; height: 28px; flex: none; }
-.logo__texto { font: 800 .82rem/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; }
+.logo__texto { font: 700 .86rem/1 var(--f-rotulo); letter-spacing: .2em; text-transform: uppercase; padding-top: .12em; font-synthesis: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition: none !important; scroll-behavior: auto !important; }
