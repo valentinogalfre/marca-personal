@@ -49,7 +49,7 @@ El tiempo hasta «todos» (línea 264) lo fija el simulador: FibraValle tarda de
 
 Otros ensayos automáticos: partido espejo con trampas, 9 de 9 bloqueados y residual 3,2 %; IP compartida bloqueada a propósito, 3 bloqueos con daño colateral y 1 de 1 reclamos resueltos por levantamiento; plataforma reiniciada en el minuto 30, 7 de 7 y 0 órdenes duplicadas; a ×60, 7 de 7; con demora de red y fallas, 7 de 7.
 
-**El partido final.** Lo que exporta la plataforma queda en [`entrega/partido-final/`](entrega/partido-final/) y se verifica con los comandos de «Cómo verificar la entrega». Mientras tanto, [`entrega/partido-practica/`](entrega/partido-practica/) trae el mismo paquete generado en un partido de práctica (jueces automáticos, ×20, con seguimiento), y se verifica con los mismos comandos. Los números de arriba son del partido de práctica.
+**El partido final.** Lo que exporta la plataforma queda en `entrega/partido-final/` y se verifica con los comandos de «Cómo verificar la entrega». Mientras tanto, [`entrega/partido-practica/`](entrega/partido-practica/) trae el mismo paquete generado en un partido de práctica (jueces automáticos, ×20, con seguimiento), y se verifica con los mismos comandos. Los números de arriba son del partido de práctica.
 
 <!-- Si el final se corre antes del cierre, una línea acá con su acta: quién firmó (persona del equipo o de la organización), con qué casilla, servidores bloqueados, órdenes ord- y amp-, rechazadas, fuera de turno; y, si la organización da su salida, los números del verificador oficial. -->
 
@@ -185,8 +185,8 @@ La consigna pide cinco (líneas 245 a 251), y «lo que se evalúa es lo que est�
 | Entregable | Dónde |
 |---|---|
 | Repositorio público y este README | Este repo |
-| Video de hasta 3 minutos | ‹enlace al video en Hacki› |
-| Expediente y auditoría del partido final | [`entrega/partido-final/`](entrega/partido-final/) |
+| Video de hasta 3 minutos | [Ver el video](https://youtu.be/Le0OHAHHejg) |
+| Expediente y auditoría del partido final | `entrega/partido-final/`, se carga después del partido final |
 | Ejemplo de expediente y auditoría (partido de práctica) | [`entrega/partido-practica/`](entrega/partido-practica/), con el registro del simulador ([`entrega/partido-practica-registro-simulador.jsonl`](entrega/partido-practica-registro-simulador.jsonl)) y la salida del verificador oficial ([`entrega/partido-practica-verificador-oficial.json`](entrega/partido-practica-verificador-oficial.json)) |
 | Propuesta normativa de una página | [`entrega/propuesta-normativa.md`](entrega/propuesta-normativa.md) y [`.pdf`](entrega/propuesta-normativa.pdf) |
 | Pitch | En vivo, el viernes |
