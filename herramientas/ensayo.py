@@ -10,6 +10,9 @@
    `python3 -m marca verificar`. Si la plataforma terminó antes, igual deja correr el simulador hasta ese minuto.
 6. Imprime el informe oficial, un resumen y el veredicto contra la sección 15. Sale con 0 solo si se cumple.
 
+Con --personas no corre ningún juez automático: firman personas desde /juez (con --host 0.0.0.0 y
+--config config/jueces_final.json, desde el celular). Mismo veredicto, y al final la fila «Personas» del README.
+
 Con --latencia-ms / --jitter-ms / --falla-cada la plataforma no habla directo con el simulador: pasa por
 herramientas/proxy_latencia.py (en --puerto-proxy), que demora cada pedido y, si se pide, responde 502 cada N.
 El ensayo y el verificador oficial siguen leyendo el simulador directo.
@@ -128,15 +131,44 @@ def esperar_minuto(leer, objetivo: float, tope_s: float, dormir=time.sleep, ahor
         dormir(cada_s)
 
 
-def arrancar_plataforma(args, salida_marca: Path, nueva: bool, log) -> subprocess.Popen:
+def comando_plataforma(args, salida_marca: Path, nueva: bool) -> list:
     cmd = [PY, "-m", "marca", "servir", "--simulador", f"http://127.0.0.1:{args.puerto_plataforma_sim}",
-           "--puerto", str(args.puerto), "--salida", str(salida_marca), "--config", str(args.config),
-           "--tick", str(args.tick)]
+           "--host", getattr(args, "host", "127.0.0.1"), "--puerto", str(args.puerto), "--salida", str(salida_marca),
+           "--config", str(args.config), "--tick", str(args.tick)]
     if nueva:
         cmd.append("--nueva")
     if args.sin_dinamica:
         cmd.append("--sin-dinamica")
-    return subprocess.Popen(cmd, cwd=str(RAIZ), stdout=log, stderr=subprocess.STDOUT, env=ENV_HIJOS)
+    return cmd
+
+
+def arrancar_plataforma(args, salida_marca: Path, nueva: bool, log) -> subprocess.Popen:
+    return subprocess.Popen(comando_plataforma(args, salida_marca, nueva), cwd=str(RAIZ), stdout=log,
+                            stderr=subprocess.STDOUT, env=ENV_HIJOS)
+
+
+def jueces_automaticos(cfg: dict, personas: bool) -> list:
+    """Los usuarios que firma un juez automático: ninguno en un ensayo con personas; si no, cada juez."""
+    return [] if personas else [u for u in cfg["usuarios"] if u["rol"] == "juez"]
+
+
+def fila_personas(acelerar: float, oficial: dict, promedios: dict, seguimiento: bool) -> str:
+    """La fila «Personas» de la tabla del README, con los números del verificador oficial y del acta."""
+    def coma(x, dec):
+        return "—" if x is None else f"{x:.{dec}f}".replace(".", ",")
+
+    def tiempos(tipo):
+        pr = promedios.get(tipo) or {}
+        return " → ".join(coma(pr.get(k), 2) for k in ("hasta_firma_min", "hasta_primer_proveedor_min",
+                                                        "hasta_todos_min"))
+    r = oficial.get("resumen") or {}
+    res = r.get("visibilidad_residual_promedio_pct")
+    medido = f"{r.get('fases_piratas_bloqueadas') or '—'} · {coma(res, 1) + ' %' if res is not None else '—'}"
+    ritmo = f"×{acelerar:g}"
+    if seguimiento:
+        return (f"| Personas del equipo, {ritmo}, seguimiento autorizado | — | — | {medido} | {tiempos('en_persona')} "
+                f"| {tiempos('ampliacion')} |")
+    return f"| Personas del equipo, {ritmo}, casilla destildada | {medido} | {tiempos('en_persona')} | — | — | — |"
 
 
 def parar(proc: Optional[subprocess.Popen], fuerte: bool = False) -> None:
@@ -257,6 +289,10 @@ def main() -> int:
     p.add_argument("--reiniciar-en", type=float, default=None)
     p.add_argument("--puerto-simulador", type=int, default=8791)
     p.add_argument("--puerto", type=int, default=8792)
+    p.add_argument("--personas", action="store_true",
+                   help="ensayo con personas: no corre ningún juez automático; firman los jueces desde /juez")
+    p.add_argument("--host", default="127.0.0.1",
+                   help="0.0.0.0 para entrar desde los celulares (necesita --config config/jueces_final.json)")
     p.add_argument("--salida", default="salida-ensayo")
     p.add_argument("--escenario", default=None)
     p.add_argument("--verdad", default=None)
@@ -287,7 +323,8 @@ def main() -> int:
             pass
     salida_marca = salida / "marca"
     registro = salida / "registro.jsonl"
-    print(AVISO, flush=True)
+    print("ENSAYO CON PERSONAS: no corre ningún juez automático; firman los jueces desde /juez." if args.personas
+          else AVISO, flush=True)
 
     sim_log = open(salida / "simulador.log", "w", encoding="utf-8")
     plat_log = open(salida / "plataforma.log", "a", encoding="utf-8")
@@ -313,16 +350,28 @@ def main() -> int:
                   + ") → simulador", flush=True)
         plataforma = arrancar_plataforma(args, salida_marca, True, plat_log)
         base = f"http://127.0.0.1:{args.puerto}"
-        esperar(base + "/api/salud", 60)
+        try:
+            esperar(base + "/api/salud", 60)
+        except SystemExit:
+            plat_log.flush()
+            print("[ensayo] la plataforma no arrancó. Últimas líneas de plataforma.log:", flush=True)
+            print("\n".join((salida / "plataforma.log").read_text(encoding="utf-8").splitlines()[-8:]), flush=True)
+            raise
         with open(args.config, encoding="utf-8") as f:
             cfg = json.load(f)
+        if args.personas:
+            print(f"[ensayo] Jueces: entrar a /juez. Sala: {base}/sala. Registro público: {base}/transparencia",
+                  flush=True)
+            with open(salida / "plataforma.log", encoding="utf-8") as f:
+                for linea in f:
+                    if "celular" in linea or "red local" in linea:
+                        print("[ensayo]" + linea.rstrip(), flush=True)
         extra_juez = opciones_juez(args.juez_serial, avisar=lambda t: print(t, flush=True))
-        for u in cfg["usuarios"]:
-            if u["rol"] == "juez":
-                j = JuezAutomatico(base, u["usuario"], u["clave_demo"], args.demora_juez, args.alcance, args.forzar_ip,
-                                   registro=lambda t: print(t, flush=True), **extra_juez)
-                j.iniciar()
-                jueces.append(j)
+        for u in jueces_automaticos(cfg, args.personas):
+            j = JuezAutomatico(base, u["usuario"], u["clave_demo"], args.demora_juez, args.alcance, args.forzar_ip,
+                               registro=lambda t: print(t, flush=True), **extra_juez)
+            j.iniciar()
+            jueces.append(j)
         reiniciado = False
         t_inicio = time.monotonic()
         while True:
@@ -422,7 +471,14 @@ def main() -> int:
               + (f" ({pr['sin_todos']} sin llegar a todos)" if pr.get("sin_todos") else ""))
     acciones = [a for j in jueces for a in j.acciones]
     errores = [a for a in acciones if a["http"] != 200 and not a.get("esperado")]
-    print(f"  Acciones de los jueces automáticos: {len(acciones)} ({len(errores)} con error)")
+    if args.personas:
+        seguimiento = any(m.get("seguimiento") for m in estado.get("marcos") or [])
+        print(f"  Firmaron: {tiempos.get('firmaron') or 'personas'} (acta). Seguimiento en la orden marco: "
+              f"{'sí' if seguimiento else 'no'}.")
+        print("  Fila para el README (tabla del juez simulado, plantilla comentada «Personas»; decir quién firmó):")
+        print("  " + fila_personas(args.acelerar, oficial, tiempos.get("promedios") or {}, seguimiento))
+    else:
+        print(f"  Acciones de los jueces automáticos: {len(acciones)} ({len(errores)} con error)")
     if proxy is not None:
         pedidos = proxy.pedidos
         demoras = [x["demora_ms"] for x in pedidos]

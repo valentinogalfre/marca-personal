@@ -835,9 +835,63 @@
       nota ? el('p', { class: 'ayuda acciones__nota', text: nota }) : null,
       el('button', { class: 'boton boton--ancho', type: 'button', disabled: ocupado,
         on: { click: () => { f.rechazando = true; botones.hidden = true; formRechazo.hidden = false; motivo.focus(); } } }, 'Rechazar'));
-    nodo.append(el('div', { class: 'decision' }, botones, formRechazo, error));
+    nodo.append(el('div', { class: 'decision' }, antesDeFirmar(u, prop, f, rec), botones, formRechazo, error));
     requestAnimationFrame(() => ponerEtiquetaFirma(nodo, k, f, rec));
     return nodo;
+  }
+
+  /* Antes de firmar: las tres comprobaciones en una línea y qué se bloquea, pegadas a los botones. En el celular,
+     el detalle de arriba ocupa más de una pantalla: así el juez ve lo que firma junto al botón. Repite, no reemplaza. */
+  function antesDeFirmar(u, prop, f, rec) {
+    const forzado = f.forzar && f.forzar !== rec ? f.forzar : null;
+    const real = forzado ? planForzado(u, forzado) : null;
+    const plan = real || prop || {};
+    const nombres = {};
+    for (const id of Object.keys(plan.objetivos_por_proveedor || {})) nombres[id] = nombreProv(id);
+    const linea = lineaBloqueo(plan, nombres);
+    const vence = (prop || {}).vence_min;
+    return el('section', { class: 'antes-de-firmar', attrs: { 'aria-label': 'Resumen antes de firmar' } },
+      el('ul', { class: 'antes-de-firmar__chequeos' }, resumenComprobaciones(u, forzado).map((x) =>
+        el('li', { class: 'chequeo chequeo--' + x.clase }, el('span', { attrs: { 'aria-hidden': 'true' }, text: x.icono + ' ' }), x.texto))),
+      el('p', { class: 'antes-de-firmar__bloqueo' },
+        el('strong', { text: forzado && !real ? 'Según la recomendación se bloquea: ' : 'Se bloquea: ' }),
+        linea || 'nada: la plataforma no recomienda bloquear este servidor.',
+        linea && vence !== undefined && vence !== null ? ' Hasta el ' + MP.min(vence) + '.' : ''));
+  }
+
+  /* Las tres comprobaciones, con los mismos criterios que las de arriba. Si el juez se apartó para bloquear por IP,
+     el daño colateral es el de bloquear la IP (no el verde de la recomendación por nombre). */
+  function resumenComprobaciones(u, forzado) {
+    const s = u.senal || {};
+    const c = u.coherencia || {};
+    const col = u.colateral || {};
+    const icono = (clase) => (clase === 'ok' ? '✓' : clase === 'alerta' ? '✕' : clase === 'espera' ? '◐' : '?');
+    const senal = s.clase === 'pirata' ? 'ok' : 'alerta';
+    const serv = c.completa ? 'ok' : c.ok ? 'espera' : 'alerta';
+    const r = forzado === 'ip' ? (RIESGO[col.riesgo] || RIESGO.desconocido) : riesgoDelBloqueo(col);
+    return [
+      { clase: senal, icono: icono(senal), texto: senal === 'ok' ? 'Señal del partido' : 'No es la señal del partido' },
+      { clase: serv, icono: icono(serv), texto: c.completa ? 'Servidor coherente' : c.ok ? 'Servidor: datos parciales' : 'Servidor: no coincide' },
+      { clase: r.clase, icono: icono(r.clase), texto: r.texto },
+    ];
+  }
+
+  /* «IP 203.0.113.10 en Aurora y Andina; s1.pelotaya.test en FibraValle.»: una frase, juntando a los proveedores
+     que reciben lo mismo. Sin nada que bloquear, null. */
+  function lineaBloqueo(plan, nombres) {
+    const obj = (plan && plan.objetivos_por_proveedor) || {};
+    const grupos = [];
+    for (const id of Object.keys(obj)) {
+      const objs = (obj[id] || []).map((o) => (o.tipo === 'ip' ? 'IP ' : '') + o.objetivo);
+      if (!objs.length) continue;
+      const clave = objs.join('|');
+      let g = grupos.find((x) => x.clave === clave);
+      if (!g) { g = { clave, objs, provs: [] }; grupos.push(g); }
+      g.provs.push(nombres[id] || id);
+    }
+    if (!grupos.length) return null;
+    const y = (xs) => (xs.length < 2 ? xs.join('') : xs.slice(0, -1).join(', ') + ' y ' + xs[xs.length - 1]);
+    return grupos.map((g) => y(g.objs) + ' en ' + y(g.provs)).join('; ') + '.';
   }
 
   const CAUSALES = ['La evidencia no alcanza', 'Riesgo para sitios ajenos', 'No es la señal del partido', 'Otro motivo'];
@@ -1061,6 +1115,8 @@
       // N18: la tabla muestra lo que va a salir con la elección actual (se rehace; no tiene campos editables).
       const tabla = det.parentNode && det.parentNode.querySelector('.bloqueos');
       if (tabla) tabla.replaceWith(tablaBloqueos(u, prop || {}, f, rec));
+      const resumen = det.parentNode && det.parentNode.querySelector('.antes-de-firmar');
+      if (resumen) resumen.replaceWith(antesDeFirmar(u, prop || {}, f, rec));
       if (det.parentNode) ponerEtiquetaFirma(det.parentNode, k, f, rec);
     }
     const opcion = (valor) => {
@@ -1608,7 +1664,23 @@
       texto = 'Pedido nuevo: ' + (p ? ubic(p).host : 'un servidor') + '.';
     }
     MP.avisar(texto, 'espera', 6);
-    if (document.visibilityState !== 'visible' || !est.toque || performance.now() - est.toque.t > 15000) titilar(texto);
+    const quieto = !est.toque || performance.now() - est.toque.t > 15000;
+    if (document.visibilityState !== 'visible' || quieto) titilar(texto);
+    // El único pedido pendiente, con el juez sin tocar ni escribir: la pantalla lo trae a la vista (el ancla del
+    // repintado lo dejaría fuera, arriba). Con otros pedidos abiertos no se mueve: puede estar leyendo uno.
+    const escribiendo = document.activeElement && document.activeElement.dataset && document.activeElement.dataset.campo;
+    if (pedido && quieto && !escribiendo && pendientesDe(b).length === 1) {
+      // Después del repintado (que corrige el ancla al terminar). setTimeout y no requestAnimationFrame: con la
+      // pantalla oculta no hay cuadros, y al volver el pedido tiene que estar a la vista. Salto directo, no suave:
+      // el repintado de cada segundo corta una animación a medias.
+      setTimeout(() => {
+        const n = buscarTarjeta(pedido);
+        if (!n) return;
+        const fijo = app.querySelector('.tablero');
+        const tope = fijo ? fijo.getBoundingClientRect().bottom : 0;
+        window.scrollTo({ top: Math.max(0, window.scrollY + n.getBoundingClientRect().top - tope - 76), behavior: 'auto' });
+      });
+    }
     if (!est.avisosActivos) return;
     sonar();
     if (navigator.vibrate) { try { navigator.vibrate([140, 70, 140]); } catch (e) { /* sin vibración */ } }

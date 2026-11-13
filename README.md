@@ -41,7 +41,7 @@ Partido de práctica oficial a ×20, verificador oficial (`evaluacion/verificar.
 | ×20 · 8 s (2,67 min de partido) | 7 de 7 · 11,2 % | 3,02 → 3,50 → 8,82 | 7 de 7 · 7,3 % | 3,22 → 3,75 → 10,38 | 0,02 → 0,45 → 5,50 |
 | ×20 · 20 s (6,67 min de partido) | 7 de 7 · 31,2 % | 11,50 → 11,97 → 18,71 | 7 de 7 · 21,2 % | 15,08 → 15,64 → 25,06 | 0,07 → 0,66 → 6,72 |
 
-<!-- Si el equipo ensaya con personas, sumar acá su fila con los números del acta y del verificador oficial de esa corrida (ver equipo/PLAN-DEL-EQUIPO.md, «Ensayos con personas»):
+<!-- Si el equipo ensaya con personas, sumar acá su fila con los números del acta y del verificador oficial de esa corrida. `python3 -I herramientas/ensayo.py --personas --host 0.0.0.0 --config config/jueces_final.json --acelerar 6 --repo-desafio …` la imprime al terminar (ver equipo/PLAN-DEL-EQUIPO.md, «Ensayos con personas»):
 | Personas del equipo, ×6, casilla destildada | bloqueados · residual | firma → primer proveedor → todos | — | — | — |
 -->
 

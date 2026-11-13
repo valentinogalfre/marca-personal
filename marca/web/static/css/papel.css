@@ -298,6 +298,16 @@ body.papel { color: var(--tinta); }
 
 /* --- decidir --- */
 .decision { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--regla); }
+/* Antes de firmar: las tres comprobaciones y qué se bloquea, pegadas a los botones. */
+.antes-de-firmar { margin-bottom: 14px; padding: 12px 14px; border-radius: 14px; background: rgba(255, 255, 255, .03); box-shadow: inset 0 0 0 1px var(--regla); display: grid; gap: 9px; }
+.antes-de-firmar__chequeos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chequeo { font: 600 .84rem/1.2 var(--f-ui); padding: .34em .72em; border-radius: 999px; }
+.chequeo--ok { color: var(--verde-texto); background: var(--verde-suave); }
+.chequeo--espera { color: var(--amarillo-texto); background: var(--amarillo-suave); }
+.chequeo--alerta { color: #fff; background: var(--rojo); }
+.chequeo--neutro { color: var(--tinta-2); outline: 1px dashed var(--regla-fuerte); outline-offset: -1px; }
+.antes-de-firmar__bloqueo { margin: 0; font-size: .9rem; line-height: 1.4; color: var(--tinta-2); overflow-wrap: anywhere; }
+.antes-de-firmar__bloqueo strong { color: var(--tinta); }
 .acciones { display: grid; gap: 10px; }
 .rechazo { display: grid; gap: 10px; }
 .decision .error-campo, .foja > .error-campo, .dinamica .error-campo, .firmada__acciones .error-campo { margin-top: 8px; }
