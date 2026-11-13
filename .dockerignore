@@ -1,0 +1,8 @@
+# Nada interno ni con contraseñas propias en la imagen (el Dockerfile además copia solo lo que usa)
+.git
+.claude
+equipo
+salida*
+config/jueces_final*.json
+config/jueces_en_linea*.json
+**/__pycache__

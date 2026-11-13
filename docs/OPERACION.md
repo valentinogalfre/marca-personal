@@ -297,6 +297,21 @@ python3 -m marca verificar /tmp/falsificada --registro-simulador salida-ensayo/A
 - Sin nada de afuera, `verificar` no lo nota. Con el registro oficial, sí: el simulador tiene las órdenes verdaderas.
 - Imprime la huella original y la falsificada: son distintas. Por eso la huella se publica al exportar.
 
+### Demo en línea (Railway)
+
+Para mostrar la plataforma sin una computadora prendida: `herramientas/demo_en_linea.py` corre partidos de práctica uno detrás de otro (simulador oficial con `python3 -I` en un puerto interno, plataforma abierta en `PORT`). Si un pedido lleva 25 segundos esperando, lo firma un juez automático de ensayo. Quien entra como juez desde el celular firma antes. Al terminar cada partido, el resultado queda a la vista 8 minutos y empieza otro. **No es el partido final:** ahí firman personas.
+
+- El `Dockerfile` baja el repo oficial fijado a un commit y copia solo `marca/`, `herramientas/` y `config/jueces_demo.json`, que hace falta para reconocer las contraseñas publicadas y rechazarlas.
+- Los usuarios van en la variable `MARCA_USUARIOS_JSON`: el contenido del archivo que arma `python3 -m marca claves --salida config/jueces_en_linea.json`. Ese archivo está en `.gitignore`. Con las contraseñas de `config/jueces_demo.json` la demo no arranca.
+- Variables opcionales: `DEMO_ACELERAR` (4), `DEMO_DEMORA_JUEZ_S` (25; 0 = sin juez automático) y `DEMO_PAUSA_FINAL_MIN` (8).
+- Cada despliegue empieza un partido nuevo. No guarda nada entre despliegues.
+
+Para probarla en esta máquina:
+
+```sh
+python3 herramientas/demo_en_linea.py --repo-desafio "$R" --config config/jueces_en_linea.json --host 127.0.0.1 --puerto 8899 --puerto-simulador 8893
+```
+
 ## 5. Si algo falla
 
 | Síntoma | Qué mirar |

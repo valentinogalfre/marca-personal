@@ -87,7 +87,7 @@ python3 -m marca verificar salida-prueba/entrega --config config/jueces_demo.jso
 
 Y el verificador oficial, desde el repo del desafío: `python3 evaluacion/verificar.py --log salida/registro.jsonl` (línea 133).
 
-**Sin personas:** `python3 herramientas/ensayo.py --repo-desafio "<repo del desafío>" --acelerar 20` levanta todo, firma con jueces automáticos (solo ensayos) y corre los dos verificadores; con `--alcance ubicacion`, firma una por una. **Pruebas:** `DESAFIO_FUTBOL_REPO="<repo del desafío>" python3 -m unittest discover -s tests` (sin la variable, las del partido espejo buscan el repo en `../desafio-futbol` y, si no está, se saltean). Operación del final: [`docs/OPERACION.md`](docs/OPERACION.md); diseño: [`docs/ESPECIFICACION.md`](docs/ESPECIFICACION.md); el desafío explicado: [`docs/EL-DESAFIO.md`](docs/EL-DESAFIO.md).
+**Sin personas:** `python3 herramientas/ensayo.py --repo-desafio "<repo del desafío>" --acelerar 20` levanta todo, firma con jueces automáticos (solo ensayos) y corre los dos verificadores; con `--alcance ubicacion`, firma una por una. **Pruebas:** `DESAFIO_FUTBOL_REPO="<repo del desafío>" python3 -m unittest discover -s tests` (sin la variable, las del partido espejo buscan el repo en `../desafio-futbol` y, si no está, se saltean). Operación del final: [`docs/OPERACION.md`](docs/OPERACION.md); diseño: [`docs/ESPECIFICACION.md`](docs/ESPECIFICACION.md); el desafío explicado: [`docs/EL-DESAFIO.md`](docs/EL-DESAFIO.md). **En línea:** https://demo-production-642eae5b.up.railway.app: partidos de práctica uno detrás de otro; si nadie firma en 25 segundos, firma un juez automático de ensayo (cómo se arma: [`docs/OPERACION.md`](docs/OPERACION.md), «Demo en línea»).
 
 ### Para un proveedor
 
@@ -171,8 +171,9 @@ Nada de código. Todo se escribió durante el evento, con asistencia de herramie
 ```
 marca/          la plataforma: evidencia, sello, auditoría, turnos, orden marco, kit, API y pantallas
 config/         usuarios y claves de demostración
-herramientas/   ensayo, juez automático, partido espejo, falsificar.py, cliente_proveedor.py
+herramientas/   ensayo, juez automático, partido espejo, falsificar.py, cliente_proveedor.py, demo en línea
 tests/          pruebas
+Dockerfile      la demo en línea (partidos de práctica en bucle; ver docs/OPERACION.md)
 entrega/        propuesta normativa, lo exportado del partido final (acta, expedientes, auditoría, MANIFIESTO.json) y el ejemplo de práctica
 docs/           el desafío explicado, las fuentes, la especificación y la operación
 ```

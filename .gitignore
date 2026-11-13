@@ -11,3 +11,6 @@ config/jueces_final*.json
 
 # Documentos internos del equipo (guion, plan, preguntas, lista de antes de entregar): no van al repo público
 equipo/
+
+# Usuarios de la demo en línea (contraseñas propias): nunca al repo; en Railway van en MARCA_USUARIOS_JSON
+config/jueces_en_linea*.json
