@@ -8,7 +8,7 @@ Con su firma, manda la orden a cada proveedor de internet en el tipo de bloqueo 
 Al terminar el partido, los bloqueos vencen. Atiende reclamos, publica un registro de transparencia y exporta todo en un paquete que se verifica sin conexión.
 Corre contra el simulador oficial: los datos son ficticios y no se bloquea nada real. No es asesoramiento legal.
 
-‹equipo›
+**Equipo:** Valentino Galfré.
 
 ## Qué lo distingue
 
